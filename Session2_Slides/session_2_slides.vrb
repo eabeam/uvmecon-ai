@@ -1,0 +1,37 @@
+\frametitle{Paper Audit: What Is \texttt {/econ-audit}?}
+\vskip-2pt
+\begin{columns}[T]
+\begin{column}{0.47\textwidth}
+\begin{tcolorbox}[keybox, title={\faSearch\quad Adversarial Review Skill}, top=3pt, bottom=3pt]
+\small
+A reusable skill that reads a paper and acts as a \textbf{skeptical referee}.
+\vskip3pt
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item Reads full paper (LaTeX, tables, appendix)
+  \item Checks identification, power, measurement
+  \item Produces structured audit report
+  \item Takes $\sim$60 seconds
+\end{itemize}
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[colback=DarkSlate, colframe=DarkSlate, arc=2pt,
+  left=4pt, right=4pt, top=2pt, bottom=2pt]
+{\color{CoolGray}\ttfamily\scriptsize \$ npx skills add eabeam/econ-skills \textbackslash\\
+\quad\quad --skill econ-audit}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.47\textwidth}
+\begin{tcolorbox}[accentbox, top=3pt, bottom=3pt]
+\small
+\textbf{What it checks:}
+\vskip3pt
+\begin{enumerate}\setlength{\itemsep}{1pt}
+  \item \textbf{Identification:} Is the causal claim valid?
+  \item \textbf{Statistics:} MHT, power, attrition
+  \item \textbf{Measurement:} Are variables measured well?
+  \item \textbf{Methodology:} Design consistency
+  \item \textbf{Presentation:} Framing, length
+\end{enumerate}
+\end{tcolorbox}
+\end{column}
+\end{columns}
