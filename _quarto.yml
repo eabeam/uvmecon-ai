@@ -25,7 +25,7 @@ website:
         text: "Bells & Whistles"
 
   body-footer: |
-    <script data-goatcounter="https://eabeam.goatcounter.com/count"
+    <script data-goatcounter="https://uvmecon-ai.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
     <script>
     document.addEventListener('click', function(e) {
