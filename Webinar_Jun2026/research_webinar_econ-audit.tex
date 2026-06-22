@@ -1,0 +1,542 @@
+% !TEX program = pdflatex
+% =====================================================================
+%  TwA Research Webinar — Emily's econ-audit segment (~18 min)
+%  June 15, 2026.  Reframe of UVM Session 2 deck (Demo 2 centered).
+%  Preamble matches Session2_Slides/session_2_slides.tex (shared design).
+% =====================================================================
+\documentclass[aspectratio=169, 10pt]{beamer}
+
+%% ============================================================
+%% PACKAGES
+%% ============================================================
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc, arrows.meta, shapes.geometric, fit, shadows}
+\usepackage[most]{tcolorbox}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{pifont}
+
+\graphicspath{{figures/}}
+
+%% ============================================================
+%% COLOR DEFINITIONS
+%% ============================================================
+\definecolor{UVMGreen}{HTML}{154734}
+\definecolor{UVMGold}{HTML}{D4A84B}
+\definecolor{SlateTeal}{HTML}{1B4D5C}
+\definecolor{DeepCharcoal}{HTML}{2C3E50}
+\definecolor{SoftCoral}{HTML}{C0534D}
+\definecolor{CoolGray}{HTML}{8899A6}
+\definecolor{PaleSage}{HTML}{EDF2F0}
+\definecolor{LightGold}{HTML}{FDF6E3}
+\definecolor{DarkSlate}{HTML}{0F2B36}
+\definecolor{AccentBlue}{HTML}{3498DB}
+
+%% ============================================================
+%% BEAMER THEME SETUP
+%% ============================================================
+\setbeamercolor{structure}{fg=SlateTeal}
+\setbeamercolor{normal text}{fg=DeepCharcoal}
+\setbeamercolor{frametitle}{fg=SlateTeal}
+\setbeamercolor{title}{fg=SlateTeal}
+\setbeamercolor{subtitle}{fg=UVMGold}
+\setbeamercolor{author}{fg=DeepCharcoal}
+\setbeamercolor{date}{fg=CoolGray}
+\setbeamercolor{institute}{fg=CoolGray}
+\setbeamercolor{footline}{fg=CoolGray}
+\setbeamercolor{block title}{fg=white, bg=SlateTeal}
+\setbeamercolor{block body}{bg=PaleSage}
+\setbeamercolor{alerted text}{fg=SoftCoral}
+\setbeamercolor{item}{fg=SlateTeal}
+\setbeamercolor{subitem}{fg=CoolGray}
+
+\setbeamerfont{title}{size=\Large, series=\bfseries}
+\setbeamerfont{subtitle}{size=\normalsize}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{footline}{size=\tiny}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Custom frame title
+\setbeamertemplate{frametitle}{%
+  \vskip14pt%
+  \nointerlineskip%
+  {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par}%
+  \vskip2pt%
+  {\color{UVMGold}\rule{\textwidth}{1.2pt}}%
+  \vskip3pt%
+}
+
+% Custom footline
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=16pt, right, rightskip=1.5cm]{footline}%
+    \usebeamerfont{footline}\insertframenumber\,/\,\inserttotalframenumber\vskip3pt%
+  \end{beamercolorbox}%
+}
+
+% Itemize styles
+\setbeamertemplate{itemize item}{\color{SlateTeal}\raisebox{0.15ex}{\small$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\color{CoolGray}\raisebox{0.1ex}{\footnotesize$\bullet$}}
+
+% Compact tcolorbox defaults
+\tcbset{
+  keybox/.style={
+    colback=PaleSage, colframe=SlateTeal, boxrule=0.8pt, arc=3pt,
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+    fonttitle=\bfseries\small\color{white}, coltitle=white, colbacktitle=SlateTeal,
+  },
+  accentbox/.style={
+    colback=LightGold, colframe=UVMGold, boxrule=0.8pt, arc=3pt,
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+  },
+  quotebox/.style={
+    colback=PaleSage, colframe=SlateTeal!50, boxrule=0.5pt, arc=2pt,
+    left=8pt, right=8pt, top=4pt, bottom=4pt,
+    borderline west={3pt}{0pt}{UVMGold},
+  },
+  coralbox/.style={
+    colback=SoftCoral!8, colframe=SoftCoral, boxrule=0.8pt, arc=3pt,
+    left=6pt, right=6pt, top=3pt, bottom=3pt,
+    fonttitle=\bfseries\small\color{white}, coltitle=white, colbacktitle=SoftCoral,
+  },
+}
+
+%% ============================================================
+%% METADATA
+%% ============================================================
+\title{AI as an Adversarial Reader}
+\subtitle{Auditing Code and Papers Before You Submit}
+\author{Emily Beam}
+\institute{Thinking with Agents \;$\cdot$\; Research Webinar}
+\date{June 15, 2026}
+
+\begin{document}
+
+%% ====== SLIDE 1: TITLE ======
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[SlateTeal] (current page.north west) rectangle (current page.south east);
+  \fill[UVMGold] ([yshift=0.3cm]current page.center -| current page.west) rectangle ([yshift=0.25cm]current page.center -| current page.east);
+  \node[anchor=center, text=white, font=\fontsize{26}{32}\bfseries\selectfont]
+    at ([yshift=2.2cm]current page.center) {AI as an Adversarial Reader};
+  \node[anchor=center, text=UVMGold, font=\fontsize{14}{19}\selectfont]
+    at ([yshift=1.25cm]current page.center) {Auditing Code \& Papers Before You Submit};
+  \node[anchor=center, text=white, font=\large\bfseries]
+    at ([yshift=-0.6cm]current page.center) {Emily Beam};
+  \node[anchor=center, text=PaleSage, font=\normalsize]
+    at ([yshift=-1.3cm]current page.center) {University of Vermont \;$\cdot$\; Thinking with Agents};
+  \node[anchor=center, text=CoolGray!70!white, font=\small]
+    at ([yshift=-2.2cm]current page.center) {Research Webinar \quad$\cdot$\quad June 15, 2026};
+  \node[text=white, opacity=0.04, font=\fontsize{100}{100}\selectfont, anchor=center, rotate=-15]
+    at ([xshift=5cm, yshift=1.5cm]current page.center) {\faRobot};
+\end{tikzpicture}
+\end{frame}
+}
+
+%% ====== SLIDE 2: WHAT I'LL SHOW ======
+\begin{frame}{What I'll Show You}
+\begin{columns}[T]
+\begin{column}{0.52\textwidth}
+\vskip4pt
+One real project --- a remote-education paper I've been trying to publish --- and two ways I used AI on it:
+\vskip6pt
+\begin{tcolorbox}[keybox, title={\faCode\quad 1. Audit the code}]
+\small Turn 3 years of accumulated do-files into a clean, reproducible replication package --- and find bugs along the way.
+\end{tcolorbox}
+\vskip4pt
+\begin{tcolorbox}[keybox, title={\faSearch\quad 2. Audit the paper}]
+\small Adversarial referee-style review \emph{before} resubmitting --- then check it against the real referee reports.
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{tcolorbox}[accentbox]
+\small
+\textbf{The theme:}
+\vskip4pt
+AI as a fast, tireless \textbf{adversarial reader} of work you've already done.
+\vskip4pt
+You stay the expert. It does the mechanical reading and cross-checking --- at a scale and patience you can't match.
+\end{tcolorbox}
+\vskip4pt
+{\scriptsize\color{CoolGray} Erkmen follows: AI at the \textit{front} end --- brainstorming and pressure-testing ideas before you've written anything.}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SECTION DIVIDER: CODE AUDIT ======
+{
+\setbeamertemplate{footline}{}
+\setbeamercolor{background canvas}{bg=SlateTeal}
+\begin{frame}[plain, noframenumbering]
+\centering\vfill
+{\fontsize{22}{28}\bfseries\selectfont\color{white} Part 1}\\[6pt]
+{\color{UVMGold}\rule{5cm}{0.8pt}}\\[6pt]
+{\normalsize\color{UVMGold} Auditing a Replication Package}\\[4pt]
+{\small\color{PaleSage} Bangladesh Remote Education RCT}
+\vfill
+\end{frame}
+}
+
+%% ====== SLIDE 3: CODE AUDIT — BEFORE ======
+\begin{frame}[fragile]{Before: 3 Years of Accumulated Code}
+\vskip-4pt
+\begin{columns}[T]
+\begin{column}{0.47\textwidth}
+\begin{tcolorbox}[colback=DarkSlate, colframe=SoftCoral, boxrule=0.8pt, arc=2pt,
+  left=4pt, right=4pt, top=3pt, bottom=3pt]
+{\color{CoolGray}\ttfamily\tiny
+02\_Do files/\\
+\quad 01\_master\_5th June 2021.do\\
+\quad 03\_vargen\_07sep.do\\
+\quad 03\_vargen.do\\
+\quad 05\_endline balance\_eb.do\\
+\quad 05\_endline balance.do\\
+\quad 09\_attrition\_8 July\_e.do\\
+\quad 09\_attrition\_8 July.do\\
+\quad ...\\
+\quad Archive/ {\color{CoolGray!50}(18 files)}\\
+\quad WB Submission Files/ {\color{CoolGray!50}(14 copies)}
+}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.47\textwidth}
+{\small\color{SoftCoral}\textbf{The problems:}}
+\vskip3pt
+\small
+\begin{itemize}\setlength{\itemsep}{2pt}
+  \item \textbf{51 do-files} across 4 subdirectories
+  \item Master file from \textbf{June 2021} --- 3 years stale
+  \item Date-in-filename: \texttt{\_07sep}, \texttt{\_02July1130am}
+  \item Author-in-filename: \texttt{\_eb}, \texttt{\_e}
+  \item Hardcoded paths --- only runs on my machine
+  \item No documentation, no version control
+\end{itemize}
+\vskip3pt
+\begin{tcolorbox}[quotebox, top=2pt, bottom=2pt]
+\scriptsize This is \textbf{extremely common} in economics. You probably have a project that looks like this.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 4: CODE AUDIT — AFTER ======
+\begin{frame}[fragile]{After: One Clean, Reproducible Pipeline}
+\vskip-4pt
+\begin{columns}[T]
+\begin{column}{0.47\textwidth}
+{\scriptsize
+\begin{tabular}{>{\raggedright\arraybackslash}m{2.8cm} >{\centering\arraybackslash}m{1.5cm} >{\centering\arraybackslash}m{1.5cm}}
+\rowcolor{SlateTeal}
+\textcolor{white}{\textbf{Dimension}} & \textcolor{white}{\textbf{Before}} & \textcolor{white}{\textbf{After}} \\[1pt]
+\rowcolor{PaleSage}
+Do-files & 51 & \textbf{8} \\[1pt]
+\rowcolor{white}
+Master file & 2021 & Current \\[1pt]
+\rowcolor{PaleSage}
+Config system & None & Template \\[1pt]
+\rowcolor{white}
+Version control & None & Git \\[1pt]
+\rowcolor{PaleSage}
+Documentation & None & Full \\[1pt]
+\rowcolor{white}
+``Which version?'' & Constant & \textbf{Zero} \\[1pt]
+\end{tabular}
+}
+\vskip3pt
+\begin{tcolorbox}[accentbox, top=2pt, bottom=2pt]
+\scriptsize \textbf{86 old variants} preserved in Archive/ --- nothing deleted, fully reversible.
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.47\textwidth}
+\begin{tcolorbox}[colback=DarkSlate, colframe=DarkSlate, arc=2pt,
+  left=4pt, right=4pt, top=2pt, bottom=2pt]
+{\color{CoolGray}\ttfamily\tiny
+bd-remote-ed/\\
+\; code/00\_master\_repo.do\\
+\; code/07\_Dofiles\_academic/\\
+\;\quad \_globals.do, 02\_datagen.do,\\
+\;\quad 03\_vargen.do {\color{UVMGold!70}(THE one)}, ...\\
+\;\quad Archive/ {\color{CoolGray!50}(86 old)}\\
+\; config/config\_local\_template.do\\
+\; docs/ \;\; justfile \;\; README.md
+}
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[quotebox, top=2pt, bottom=2pt]
+\scriptsize \textbf{Time:} $\sim$2 Claude Code sessions (a few hours).
+\textbf{By hand:} days, minimum.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 5: THE $FLAGS BUG ======
+\begin{frame}[fragile]{The Bug It Found: A Typo Hiding in Plain Sight}
+\vskip-2pt
+\begin{tcolorbox}[keybox, title={\faBug\quad The \texttt{\$flags} variable list}, top=2pt, bottom=2pt]
+\small
+\texttt{\$flags} = 17 missing-value indicators used as controls in \textbf{every regression}. Defined independently in 5 scripts.
+\end{tcolorbox}
+\vskip3pt
+\begin{columns}[T]
+\begin{column}{0.47\textwidth}
+\begin{tcolorbox}[colback=SoftCoral!8, colframe=SoftCoral, boxrule=0.5pt, arc=2pt, left=5pt, right=5pt, top=3pt, bottom=3pt]
+\centering{\small\color{SoftCoral}\textbf{3 of 5 scripts (wrong):}}
+\vskip3pt
+{\ttfamily\small\color{DeepCharcoal}
+... \_f\_c\_engaged \_f\_c\_health\\
+\colorbox{SoftCoral!20}{\_c\_child\_work}}
+\vskip2pt
+{\scriptsize Missing the \texttt{\_f\_} prefix}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.06\textwidth}
+\centering\vskip0.8cm
+{\large\color{UVMGold}\faArrowRight}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{tcolorbox}[colback=PaleSage, colframe=SlateTeal!50, boxrule=0.5pt, arc=2pt, left=5pt, right=5pt, top=3pt, bottom=3pt]
+\centering{\small\color{SlateTeal}\textbf{Correct:}}
+\vskip3pt
+{\ttfamily\small\color{DeepCharcoal}
+... \_f\_c\_engaged \_f\_c\_health\\
+\colorbox{PaleSage!50}{\_f\_c\_child\_work}}
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\vskip3pt
+\begin{tcolorbox}[quotebox, top=2pt, bottom=2pt]
+\scriptsize \textbf{Result:} \texttt{\_c\_child\_work} appeared \textit{twice} in regressions; the real missing indicator was left out. Survived 10+ versions across 2+ years. No error, no crash --- just quietly wrong.
+\textbf{How AI found it:} cross-referencing every \texttt{global flags} definition across all 51 files.
+\end{tcolorbox}
+\end{frame}
+
+%% ====== SECTION DIVIDER: PAPER AUDIT ======
+{
+\setbeamertemplate{footline}{}
+\setbeamercolor{background canvas}{bg=SlateTeal}
+\begin{frame}[plain, noframenumbering]
+\centering\vfill
+{\fontsize{22}{28}\bfseries\selectfont\color{white} Part 2}\\[6pt]
+{\color{UVMGold}\rule{5cm}{0.8pt}}\\[6pt]
+{\normalsize\color{UVMGold} Auditing the Paper}\\[4pt]
+{\small\color{PaleSage} Can AI Referee Your Own Work?}
+\vfill
+\end{frame}
+}
+
+%% ====== SLIDE 6: WHAT IS /ECON-AUDIT ======
+\begin{frame}[fragile]{What Is \texttt{/econ-audit}?}
+\vskip-2pt
+\begin{columns}[T]
+\begin{column}{0.47\textwidth}
+\begin{tcolorbox}[keybox, title={\faSearch\quad An Adversarial Review Skill}, top=3pt, bottom=3pt]
+\small
+A reusable skill that reads a paper and acts as a \textbf{skeptical referee}.
+\vskip3pt
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item Reads the full paper (LaTeX, tables, appendix)
+  \item Checks identification, power, measurement
+  \item Produces a structured audit report
+  \item Takes $\sim$60 seconds
+\end{itemize}
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[colback=DarkSlate, colframe=DarkSlate, arc=2pt,
+  left=4pt, right=4pt, top=2pt, bottom=2pt]
+{\color{CoolGray}\ttfamily\scriptsize \$ npx skills add eabeam/econ-skills \textbackslash\\
+\quad\quad --skill econ-audit}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.47\textwidth}
+\begin{tcolorbox}[accentbox, top=3pt, bottom=3pt]
+\small
+\textbf{What it checks:}
+\vskip3pt
+\begin{enumerate}\setlength{\itemsep}{1pt}
+  \item \textbf{Identification:} Is the causal claim valid?
+  \item \textbf{Statistics:} MHT, power, attrition
+  \item \textbf{Measurement:} Are variables measured well?
+  \item \textbf{Methodology:} Design consistency
+  \item \textbf{Presentation:} Framing, length
+\end{enumerate}
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 7: THE AUDIT OUTPUT (shown from saved run) ======
+\begin{frame}[fragile]{Running It on the Paper: 5 Critical, 8 Important, 6 Minor}
+\vskip-2pt
+\begin{columns}[T]
+\begin{column}{0.40\textwidth}
+\begin{tcolorbox}[colback=DarkSlate, colframe=CoolGray!40, boxrule=0.5pt, arc=3pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt]
+{\color{CoolGray}\ttfamily\small\$\; claude}\\[3pt]
+{\color{white}\ttfamily\small /econ-audit main.tex}
+\end{tcolorbox}
+\vskip4pt
+{\scriptsize\color{CoolGray} Output shown is from a saved run --- AI output varies between runs, so I pin the version I'm reasoning about.}
+\end{column}
+\begin{column}{0.55\textwidth}
+\small Three of the critical findings:
+\vskip3pt
+\begin{tcolorbox}[coralbox, title={\faExclamationTriangle\quad Critical}, top=3pt, bottom=3pt]
+\footnotesize
+\begin{itemize}\setlength{\itemsep}{2pt}
+  \item \textbf{A1 --- Identification:} the mediation claim (info $\rightarrow$ tutoring $\rightarrow$ learning) is not identified.
+  \item \textbf{B1--B3 --- Statistics:} no MHT adjustment across domains; headline effect below the MDE; underpowered heterogeneity drives the inequality story.
+  \item \textbf{C1 --- Measurement:} differential attrition in the learning sample ($p<0.001$); suggested Lee bounds.
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 8: AI AUDIT VS REAL REFEREES ======
+\begin{frame}{AI Audit vs.\ Real Referees: 7 of 10 in $\sim$60 Seconds}
+\vskip-2pt
+{\scriptsize
+\begin{tabular}{>{\raggedright\arraybackslash}m{5.5cm} c >{\raggedright\arraybackslash}m{5.2cm}}
+\rowcolor{SlateTeal}
+\textcolor{white}{\textbf{Referee Criticism}} & \textcolor{white}{\textbf{AI?}} & \textcolor{white}{\textbf{Notes}} \\[2pt]
+\rowcolor{PaleSage}
+High attrition \& differential attrition & \textcolor{SlateTeal}{\faCheck} & Flagged as Critical; suggested Lee bounds \\[2pt]
+\rowcolor{white}
+Results don't tell a coherent story & \textcolor{UVMGold}{\faAdjust} & Caught ID problem, missed internal contradictions \\[2pt]
+\rowcolor{PaleSage}
+Theoretical model not useful & \textcolor{SlateTeal}{\faCheck} & Flagged --- but recommended \textit{including} it \\[2pt]
+\rowcolor{white}
+Short intervention duration (4--8 weeks) & \textcolor{SoftCoral}{\faTimes} & Requires field knowledge \\[2pt]
+\rowcolor{PaleSage}
+Noisy learning measures (8-item phone test) & \textcolor{SlateTeal}{\faCheck} & Strong match; flagged IRT minimums \\[2pt]
+\rowcolor{white}
+Paper too long and hard to follow & \textcolor{SlateTeal}{\faCheck} & Suggested cutting 20--30\% \\[2pt]
+\rowcolor{PaleSage}
+Multiple hypothesis testing issues & \textcolor{SlateTeal}{\faCheck} & Aggressive; added winner's curse framing \\[2pt]
+\rowcolor{white}
+Limited external validity / COVID fatigue & \textcolor{UVMGold}{\faAdjust} & Partial; missed publication landscape \\[2pt]
+\rowcolor{PaleSage}
+Deviations from pre-analysis plan & \textcolor{SlateTeal}{\faCheck} & Caught the spirit, not the specifics \\[2pt]
+\rowcolor{white}
+Complex randomization hard to interpret & \textcolor{SlateTeal}{\faCheck} & Strong match \\[2pt]
+\end{tabular}
+}
+\vskip3pt
+\begin{tcolorbox}[accentbox, top=2pt, bottom=2pt, width=12cm]
+\centering\small \textbf{5 full matches, 2 partial, 1 opposite recommendation, 2 misses.}\\
+11 referee reports across 8 journals over 4 years --- vs.\ 60 seconds of AI.
+\end{tcolorbox}
+\end{frame}
+
+%% ====== SLIDE 9: WHAT THE AI MISSED ======
+\begin{frame}{What the AI Missed --- And Why It Matters}
+\begin{columns}[T]
+\begin{column}{0.47\textwidth}
+\begin{tcolorbox}[coralbox, title={\faTimes\quad The Misses}, top=4pt, bottom=4pt]
+\small
+\begin{itemize}\setlength{\itemsep}{4pt}
+  \item \textbf{Short duration:} 4--8 weeks is unusually short for an education RCT. Requires knowing field norms.
+  \item \textbf{Internal contradictions:} the data arm raised tutoring \textit{more} than the info arm, yet only info improved learning. Referees caught this; AI didn't.
+  \item \textbf{COVID fatigue:} ``we've seen too many of these.'' AI can't read the publication landscape.
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.47\textwidth}
+\begin{tcolorbox}[quotebox]
+\small
+\textbf{The opposite advice:}\\[3pt]
+The AI recommended \textit{including} the conceptual model. Every referee wanted it \textbf{cut}.
+\vskip4pt
+Sometimes AI gives exactly the wrong recommendation --- because it lacks field conventions.
+\end{tcolorbox}
+\vskip4pt
+\begin{tcolorbox}[accentbox]
+\small
+\textbf{Pattern:}\\[2pt]
+AI reliably catches \textbf{statistical / econometric} issues.\\[2pt]
+AI misses \textbf{field knowledge}, \textbf{within-paper logic checks}, and \textbf{publication strategy}.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 10: HONEST TAKEAWAY ======
+\begin{frame}{Takeaway: A Very Good Pre-Submission Check}
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\begin{tcolorbox}[keybox, title={\faCheck\quad What It Replaces}]
+\small
+\begin{itemize}\setlength{\itemsep}{3pt}
+  \item The first 80\% of what a careful internal seminar discussant would say
+  \item Catches the systematic stuff: identification, power, MHT, attrition
+  \item In one minute, not one month
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.44\textwidth}
+\begin{tcolorbox}[colback=SoftCoral!8, colframe=SoftCoral, boxrule=0.5pt, arc=3pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt]
+\small
+\textbf{What it doesn't replace:}
+\vskip3pt
+\begin{itemize}\setlength{\itemsep}{2pt}
+  \item Field-specific intuition
+  \item ``Does this make sense given what we know about Bangladesh?''
+  \item Publication strategy
+  \item Colleagues who know your work
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\vskip8pt
+\begin{tcolorbox}[quotebox, width=13cm]
+\small \textbf{Code audit:} it found bugs I hadn't found in two years. That alone justified the time.\\[2pt]
+\textbf{Paper audit:} run it before you send a paper out. It's free, and it catches the embarrassing stuff.
+\end{tcolorbox}
+\end{frame}
+
+%% ====== SLIDE 11: HANDOFF + RESOURCES ======
+\begin{frame}[fragile]{Try It --- And Over to Erkmen}
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\begin{tcolorbox}[keybox, title={\faRocket\quad What to Try First}]
+\small
+\begin{enumerate}\setlength{\itemsep}{3pt}
+  \item Install \texttt{/econ-audit}, run it on your next submission --- before the referees do.
+  \item Point Claude Code at a messy project folder and ask it to audit the structure.
+\end{enumerate}
+\end{tcolorbox}
+\vskip4pt
+\begin{tcolorbox}[quotebox, top=3pt, bottom=3pt]
+\scriptsize Same principle both times: \textbf{AI does the mechanical reading; you keep the judgment.}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.47\textwidth}
+\begin{tcolorbox}[keybox, title={\faLink\quad Resources}, top=3pt, bottom=3pt]
+\small
+\begin{itemize}\setlength{\itemsep}{3pt}
+  \item Econ skills:\\{\scriptsize\ttfamily github.com/eabeam/econ-skills}
+  \item Skills library:\\{\scriptsize\ttfamily skills.sh}
+  \item Claude Code docs:\\{\scriptsize\ttfamily docs.anthropic.com/en/docs/claude-code}
+\end{itemize}
+\end{tcolorbox}
+\vskip4pt
+{\small\color{SlateTeal} Next: Erkmen on using AI to \textbf{brainstorm and pressure-test research ideas}.}
+\end{column}
+\end{columns}
+\end{frame}
+
+\end{document}

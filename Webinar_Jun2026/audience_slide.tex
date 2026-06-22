@@ -1,0 +1,65 @@
+% !TEX program = pdflatex
+% =====================================================================
+%  "Who's in the Room" — audience slide for Emily's research-webinar opener.
+%  Standalone + compilable; preamble mirrors research_webinar_econ-audit.tex.
+%  To use: lift the frame between the BEGIN/END markers into your main deck
+%  (all styles already exist there).  Data: registrant survey, Jun 2026.
+% =====================================================================
+\documentclass[aspectratio=169, 10pt]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc, arrows.meta, shapes.geometric}
+\usepackage[most]{tcolorbox}
+\ifdefined\AddToHook\else\long\def\AddToHook#1#2{}\fi
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+
+\definecolor{UVMGreen}{HTML}{154734}
+\definecolor{UVMGold}{HTML}{D4A84B}
+\definecolor{SlateTeal}{HTML}{1B4D5C}
+\definecolor{DeepCharcoal}{HTML}{2C3E50}
+\definecolor{SoftCoral}{HTML}{C0534D}
+\definecolor{CoolGray}{HTML}{8899A6}
+\definecolor{PaleSage}{HTML}{EDF2F0}
+\definecolor{LightGold}{HTML}{FDF6E3}
+\definecolor{DarkSlate}{HTML}{0F2B36}
+
+\setbeamercolor{frametitle}{fg=SlateTeal}
+\setbeamercolor{normal text}{fg=DeepCharcoal}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle}{%
+  \vskip14pt\nointerlineskip%
+  {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par}%
+  \vskip2pt{\color{UVMGold}\rule{\textwidth}{1.2pt}}\vskip3pt}
+\setbeamertemplate{itemize item}{\color{SlateTeal}\raisebox{0.15ex}{\small$\blacktriangleright$}}
+\tcbset{
+  keybox/.style={colback=PaleSage, colframe=SlateTeal, boxrule=0.8pt, arc=3pt,
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+    fonttitle=\bfseries\small\color{white}, coltitle=white, colbacktitle=SlateTeal},
+  accentbox/.style={colback=LightGold, colframe=UVMGold, boxrule=0.8pt, arc=3pt,
+    left=6pt, right=6pt, top=4pt, bottom=4pt},
+}
+
+\begin{document}
+
+% ======================= BEGIN: AUDIENCE FRAME =======================
+% Figure: figures/audience_charts.png  (rendered from the survey memo).
+\begin{frame}{Who's in the Room --- 62 Registered, 21 Countries}
+\vskip-4pt
+\begin{center}
+\includegraphics[width=0.85\textwidth]{audience_charts.png}
+\end{center}
+\vskip-2pt
+\begin{tcolorbox}[accentbox, halign=center, top=2pt, bottom=2pt]
+\small First-timers to daily power users, mostly international --- \textbf{this hour is built for all of you: orient first, then go deep.}
+\end{tcolorbox}
+\end{frame}
+% ======================== END: AUDIENCE FRAME ========================
+
+\end{document}

@@ -1,0 +1,545 @@
+% !TEX program = pdflatex
+% =====================================================================
+%  TwA Teaching Webinar — Emily's FERPA & AI segment (~20 min)
+%  June 17, 2026.  Built from verified deep-research brief
+%  (eb-lab/projects/twa-ra-bootcamp/2026-06-11_ferpa-ai-teaching-brief.md).
+%  Preamble matches the shared UVM Econ design system.
+% =====================================================================
+\documentclass[aspectratio=169, 10pt]{beamer}
+
+%% ============================================================
+%% PACKAGES
+%% ============================================================
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc, arrows.meta, shapes.geometric, fit, shadows}
+\usepackage[most]{tcolorbox}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{pifont}
+
+\graphicspath{{figures/}}
+
+%% ============================================================
+%% COLOR DEFINITIONS
+%% ============================================================
+\definecolor{UVMGreen}{HTML}{154734}
+\definecolor{UVMGold}{HTML}{D4A84B}
+\definecolor{SlateTeal}{HTML}{1B4D5C}
+\definecolor{DeepCharcoal}{HTML}{2C3E50}
+\definecolor{SoftCoral}{HTML}{C0534D}
+\definecolor{CoolGray}{HTML}{8899A6}
+\definecolor{PaleSage}{HTML}{EDF2F0}
+\definecolor{LightGold}{HTML}{FDF6E3}
+\definecolor{DarkSlate}{HTML}{0F2B36}
+\definecolor{AccentBlue}{HTML}{3498DB}
+\definecolor{GoGreen}{HTML}{2E7D52}
+
+%% ============================================================
+%% BEAMER THEME SETUP
+%% ============================================================
+\setbeamercolor{structure}{fg=SlateTeal}
+\setbeamercolor{normal text}{fg=DeepCharcoal}
+\setbeamercolor{frametitle}{fg=SlateTeal}
+\setbeamercolor{title}{fg=SlateTeal}
+\setbeamercolor{subtitle}{fg=UVMGold}
+\setbeamercolor{author}{fg=DeepCharcoal}
+\setbeamercolor{date}{fg=CoolGray}
+\setbeamercolor{institute}{fg=CoolGray}
+\setbeamercolor{footline}{fg=CoolGray}
+\setbeamercolor{block title}{fg=white, bg=SlateTeal}
+\setbeamercolor{block body}{bg=PaleSage}
+\setbeamercolor{alerted text}{fg=SoftCoral}
+\setbeamercolor{item}{fg=SlateTeal}
+\setbeamercolor{subitem}{fg=CoolGray}
+
+\setbeamerfont{title}{size=\Large, series=\bfseries}
+\setbeamerfont{subtitle}{size=\normalsize}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{footline}{size=\tiny}
+
+\setbeamertemplate{navigation symbols}{}
+
+% Custom frame title
+\setbeamertemplate{frametitle}{%
+  \vskip14pt%
+  \nointerlineskip%
+  {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle\par}%
+  \vskip2pt%
+  {\color{UVMGold}\rule{\textwidth}{1.2pt}}%
+  \vskip3pt%
+}
+
+% Custom footline
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth, ht=16pt, right, rightskip=1.5cm]{footline}%
+    \usebeamerfont{footline}\insertframenumber\,/\,\inserttotalframenumber\vskip3pt%
+  \end{beamercolorbox}%
+}
+
+% Itemize styles
+\setbeamertemplate{itemize item}{\color{SlateTeal}\raisebox{0.15ex}{\small$\blacktriangleright$}}
+\setbeamertemplate{itemize subitem}{\color{CoolGray}\raisebox{0.1ex}{\footnotesize$\bullet$}}
+
+% Compact tcolorbox defaults
+\tcbset{
+  keybox/.style={
+    colback=PaleSage, colframe=SlateTeal, boxrule=0.8pt, arc=3pt,
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+    fonttitle=\bfseries\small\color{white}, coltitle=white, colbacktitle=SlateTeal,
+  },
+  accentbox/.style={
+    colback=LightGold, colframe=UVMGold, boxrule=0.8pt, arc=3pt,
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+  },
+  quotebox/.style={
+    colback=PaleSage, colframe=SlateTeal!50, boxrule=0.5pt, arc=2pt,
+    left=8pt, right=8pt, top=4pt, bottom=4pt,
+    borderline west={3pt}{0pt}{UVMGold},
+  },
+  dobox/.style={
+    colback=GoGreen!8, colframe=GoGreen, boxrule=0.8pt, arc=3pt,
+    left=6pt, right=6pt, top=3pt, bottom=3pt,
+    fonttitle=\bfseries\small\color{white}, coltitle=white, colbacktitle=GoGreen,
+  },
+  dontbox/.style={
+    colback=SoftCoral!8, colframe=SoftCoral, boxrule=0.8pt, arc=3pt,
+    left=6pt, right=6pt, top=3pt, bottom=3pt,
+    fonttitle=\bfseries\small\color{white}, coltitle=white, colbacktitle=SoftCoral,
+  },
+  coralbox/.style={
+    colback=SoftCoral!8, colframe=SoftCoral, boxrule=0.8pt, arc=3pt,
+    left=6pt, right=6pt, top=3pt, bottom=3pt,
+    fonttitle=\bfseries\small\color{white}, coltitle=white, colbacktitle=SoftCoral,
+  },
+}
+
+% Citation helper (muted footnote-style cite)
+\newcommand{\cmcite}[1]{{\scriptsize\color{CoolGray}\textit{#1}}}
+
+%% ============================================================
+%% METADATA
+%% ============================================================
+\title{FERPA \& AI Tools in Teaching}
+\subtitle{What You Can and Can't Feed an AI}
+\author{Emily Beam}
+\institute{Thinking with Agents \;$\cdot$\; Teaching Webinar}
+\date{June 17, 2026}
+
+\begin{document}
+
+%% ====== SLIDE 1: TITLE ======
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[SlateTeal] (current page.north west) rectangle (current page.south east);
+  \fill[UVMGold] ([yshift=0.3cm]current page.center -| current page.west) rectangle ([yshift=0.25cm]current page.center -| current page.east);
+  \node[anchor=center, text=white, font=\fontsize{27}{33}\bfseries\selectfont]
+    at ([yshift=2.2cm]current page.center) {FERPA \& AI Tools in Teaching};
+  \node[anchor=center, text=UVMGold, font=\fontsize{14}{19}\selectfont]
+    at ([yshift=1.25cm]current page.center) {What You Can --- and Can't --- Feed an AI};
+  \node[anchor=center, text=white, font=\large\bfseries]
+    at ([yshift=-0.6cm]current page.center) {Emily Beam};
+  \node[anchor=center, text=PaleSage, font=\normalsize]
+    at ([yshift=-1.3cm]current page.center) {University of Vermont \;$\cdot$\; Thinking with Agents};
+  \node[anchor=center, text=CoolGray!70!white, font=\small]
+    at ([yshift=-2.2cm]current page.center) {Teaching Webinar \quad$\cdot$\quad June 17, 2026};
+  \node[text=white, opacity=0.04, font=\fontsize{100}{100}\selectfont, anchor=center, rotate=-15]
+    at ([xshift=5cm, yshift=1.5cm]current page.center) {\faLock};
+\end{tikzpicture}
+\end{frame}
+}
+
+%% ====== SLIDE 2: THE 30-SECOND VERSION ======
+\begin{frame}{The 30-Second Version}
+\begin{tcolorbox}[accentbox, top=2pt, bottom=2pt]
+\small
+\textbf{FERPA applies the moment you put identifiable student work, grades, or education records into an AI tool.} There are exactly \textbf{two} clean, legal ways to use AI with student data.
+\end{tcolorbox}
+\vskip2pt
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{tcolorbox}[dobox, title={\faCheck\quad Path 1: Approved tool}, top=2pt, bottom=2pt]
+\small Use an \textbf{institution-vetted} AI tool that qualifies as a ``school official'' (under contract / institutional control).
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{tcolorbox}[dobox, title={\faCheck\quad Path 2: De-identify}, top=2pt, bottom=2pt]
+\small \textbf{Properly de-identify} the data first, so it's no longer protected information.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\vskip4pt
+\begin{tcolorbox}[dontbox, title={\faBan\quad The one-line don't}, top=2pt, bottom=2pt]
+\small Never paste identifiable student work or grades into your \textbf{personal/consumer} AI account (consumer ChatGPT, Claude, or Copilot). That's an unconsented disclosure of education records.
+\end{tcolorbox}
+\vskip1pt
+\cmcite{Not legal advice --- accurate to 34 CFR Part 99 \& ED guidance as of June 2026; defer to your institution's policy.}
+\end{frame}
+
+%% ====== SECTION DIVIDER: FOUNDATION ======
+{
+\setbeamertemplate{footline}{}
+\setbeamercolor{background canvas}{bg=SlateTeal}
+\begin{frame}[plain, noframenumbering]
+\centering\vfill
+{\fontsize{22}{28}\bfseries\selectfont\color{white} Part 1}\\[6pt]
+{\color{UVMGold}\rule{5cm}{0.8pt}}\\[6pt]
+{\normalsize\color{UVMGold} The Legal Foundation}\\[4pt]
+{\small\color{PaleSage} What FERPA Actually Requires}
+\vfill
+\end{frame}
+}
+
+%% ====== SLIDE 3: EDUCATION RECORDS ======
+\begin{frame}{What's Protected: ``Education Records''}
+\begin{columns}[T]
+\begin{column}{0.54\textwidth}
+\small Records that are:
+\vskip3pt
+\begin{enumerate}\setlength{\itemsep}{2pt}
+  \item \textbf{directly related to a student}, AND
+  \item \textbf{maintained by the institution} --- or by \textbf{a party acting for it}.
+\end{enumerate}
+\vskip5pt
+Records an AI vendor holds \emph{on your institution's behalf} are \textbf{themselves} education records. The data stays under FERPA after you hand it over.
+\vskip4pt
+{\small Grades, transcripts, class lists, and student work are the canonical examples.}
+\vskip4pt
+\cmcite{34 CFR 99.3; ED ``Responsibilities of Third-Party Service Providers under FERPA'' (2015).}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{tcolorbox}[quotebox]
+\small
+\textbf{Useful nuance:}\\[3pt]
+A \emph{student} pasting \emph{their own} work into a consumer tool does \textbf{not} make the vendor's records ``education records.''
+\vskip4pt
+The obligation runs to \textbf{you and the institution} --- not the student.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 4: PII IS BROADER ======
+\begin{frame}{What's Identifiable: PII Is Broader Than Names}
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\begin{tcolorbox}[keybox, title={\faIdCard\quad FERPA's PII includes\ldots}]
+\small
+\begin{itemize}\setlength{\itemsep}{2pt}
+  \item Direct identifiers (name, SSN, student ID)
+  \item \textbf{Indirect} identifiers (DOB, place of birth)
+  \item Interaction \textbf{metadata}
+  \item Even \textbf{aggregate} data
+\end{itemize}
+\vskip3pt
+\footnotesize \ldots anything that, alone or combined, lets ``a reasonable person in the school community identify the student with reasonable certainty.''
+\end{tcolorbox}
+\vskip3pt
+\cmcite{34 CFR 99.3; ED Vendor FAQ.}
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{tcolorbox}[coralbox, title={\faExclamationTriangle\quad The mosaic effect}]
+\small
+In a \textbf{small economics seminar}, an ``anonymized'' essay can still be re-identifiable from:
+\vskip3pt
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item topic
+  \item writing style
+  \item other facts you already know
+\end{itemize}
+\vskip3pt
+De-identification means addressing \textbf{combinations} of identifiers --- not just deleting names.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 5: THE DEFAULT RULE — CONSENT ======
+\begin{frame}{The Default Rule: Consent}
+\begin{columns}[T]
+\begin{column}{0.54\textwidth}
+\small A school \textbf{may not disclose PII} from education records \textbf{without prior signed, dated written consent} --- \emph{unless} an enumerated exception applies.
+\vskip5pt
+``Disclosure'' explicitly covers electronic transmission ``by any means \ldots to any party.'' \textbf{Uploading to an external AI tool is a disclosure.}
+\vskip4pt
+\cmcite{34 CFR 99.30(a), 99.3; ED 2014 online-services guidance.}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{tcolorbox}[accentbox]
+\small
+\textbf{In higher ed, the consent is the \emph{student's} --- not the parent's.}
+\vskip4pt
+FERPA rights transfer to the student when they turn 18 \textbf{or enter a postsecondary institution at any age.}
+\end{tcolorbox}
+\vskip4pt
+\begin{tcolorbox}[quotebox, top=3pt, bottom=3pt]
+\scriptsize Being a ``disclosure'' $\neq$ automatically a violation --- it means an exception or de-identification must apply.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 6: EXCEPTION A — SCHOOL OFFICIAL ======
+\begin{frame}{Exception A: The ``School Official'' Pathway (for vendors)}
+\vskip-2pt
+\begin{columns}[T]
+\begin{column}{0.55\textwidth}
+\small A vendor may receive PII \textbf{without consent} only if it:
+\vskip3pt
+\begin{enumerate}\setlength{\itemsep}{2pt}
+  \item performs a service the school would otherwise use \textbf{employees} for;
+  \item is a designated school official with a \textbf{legitimate educational interest} (annual FERPA notice);
+  \item is under the institution's \textbf{direct control}; and
+  \item uses records \textbf{only for authorized purposes} --- \textbf{no re-disclosure}.
+\end{enumerate}
+\vskip4pt
+\cmcite{34 CFR 99.31(a)(1)(i); 99.33(a); ED Vendor FAQ + 2014 guidance.}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{tcolorbox}[coralbox, title={\faTimesCircle\quad Bottom line}, top=3pt, bottom=3pt]
+\small A \textbf{consumer/personal} AI account is \textbf{not} under institutional control. It \textbf{cannot} qualify.
+\vskip3pt
+Only an institutionally-contracted, vetted tool can.
+\end{tcolorbox}
+\vskip4pt
+\begin{tcolorbox}[quotebox, top=3pt, bottom=3pt]
+\scriptsize This same exception is \emph{why you} can lawfully see your own students' records --- instructors are ``school officials with legitimate educational interests.''
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 7: EXCEPTION B — DE-IDENTIFICATION ======
+\begin{frame}{Exception B: De-Identification (no vendor contract needed)}
+\begin{columns}[T]
+\begin{column}{0.54\textwidth}
+\small After removing all PII, an institution may use/release records without consent --- \emph{provided} it makes a \textbf{reasonable determination} that identity is not personally identifiable, accounting for single \emph{or multiple} releases and \textbf{other reasonably available information.}
+\vskip4pt
+Properly de-identified data is \textbf{outside FERPA entirely}, so it may be used in general AI tools.
+\vskip4pt
+\cmcite{34 CFR 99.31(b)(1); ED 2014 guidance.}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{tcolorbox}[coralbox, title={\faExclamationTriangle\quad Say this out loud}]
+\small ``Properly de-identified'' is a \textbf{risk-based standard}, not a name-stripping checklist.
+\vskip3pt
+In small classes the bar is \textbf{genuinely hard to clear}. Treat it as a judgment call.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 8: WHAT ED HAS / HASN'T SAID ======
+\begin{frame}{What the Dept of Education Has --- and Hasn't --- Said}
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\begin{tcolorbox}[keybox, title={\faGavel\quad No AI-specific rules}]
+\small \textbf{No AI-specific FERPA regulations exist} (as of June 2026). The existing \textbf{technology-neutral} guidance governs AI vendors directly.
+\end{tcolorbox}
+\vskip4pt
+\begin{tcolorbox}[quotebox, top=3pt, bottom=3pt]
+\scriptsize The framework (school-official exception, direct control, data-minimization) is tech-neutral --- AI tools are just a subset of ``online educational services.''
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{tcolorbox}[accentbox]
+\small
+\textbf{The operative ED documents:}
+\vskip3pt
+\begin{itemize}\setlength{\itemsep}{2pt}
+  \item Third-Party Service Providers under FERPA (2015)
+  \item Online Educational Services: Requirements \& Best Practices (2014)
+  \item \textbf{Model Terms of Service checklist (2016)} --- ready-made for vetting a tool's ToS
+\end{itemize}
+\end{tcolorbox}
+\vskip3pt
+\cmcite{studentprivacy.ed.gov}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SECTION DIVIDER: PRACTICE ======
+{
+\setbeamertemplate{footline}{}
+\setbeamercolor{background canvas}{bg=SlateTeal}
+\begin{frame}[plain, noframenumbering]
+\centering\vfill
+{\fontsize{22}{28}\bfseries\selectfont\color{white} Part 2}\\[6pt]
+{\color{UVMGold}\rule{5cm}{0.8pt}}\\[6pt]
+{\normalsize\color{UVMGold} Practical Do's \& Don'ts}\\[4pt]
+{\small\color{PaleSage} For Economics Faculty}
+\vfill
+\end{frame}
+}
+
+%% ====== SLIDE 9: DO / DON'T ======
+\begin{frame}{Do's \& Don'ts}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{tcolorbox}[dontbox, title={\faTimes\quad DON'T}]
+\small
+\begin{itemize}\setlength{\itemsep}{3pt}
+  \item Paste \textbf{identifiable} essays, exams, or grades into a \textbf{consumer} AI account
+  \item Assume \textbf{deleting the name} makes an essay safe
+  \item Upload a \textbf{gradebook / roster} to ``summarize''
+  \item Build a chatbot \textbf{trained on} identifiable student work without approval + a DPA
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{tcolorbox}[dobox, title={\faCheck\quad DO}]
+\small
+\begin{itemize}\setlength{\itemsep}{3pt}
+  \item Use your institution's \textbf{vetted, contracted} AI tool for identifiable data
+  \item \textbf{De-identify first} --- for re-ID risk, not just names
+  \item Run a tool's ToS through ED's \textbf{2016 Model ToS checklist}
+  \item Check your \textbf{institution's own AI policy} (often stricter)
+  \item Ask your \textbf{registrar / privacy office} when unsure
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 10: CLASSROOM SCENARIOS ======
+\begin{frame}{Concrete Classroom Scenarios}
+\vskip-2pt
+{\small
+\begin{tabular}{>{\raggedright\arraybackslash}m{7.3cm} >{\centering\arraybackslash}m{1.3cm} >{\raggedright\arraybackslash}m{3.4cm}}
+\rowcolor{SlateTeal}
+\textcolor{white}{\textbf{Scenario}} & \textcolor{white}{\textbf{Verdict}} & \textcolor{white}{\textbf{Why}} \\[2pt]
+\rowcolor{PaleSage}
+Named essay into consumer ChatGPT for feedback & \textcolor{SoftCoral}{\faTimes} & Unconsented disclosure \\[3pt]
+\rowcolor{white}
+Same essay, \textbf{fully de-identified}, low re-ID risk, general tool & \textcolor{UVMGold}{\faExclamationTriangle} & Defensible --- your judgment \\[3pt]
+\rowcolor{PaleSage}
+Same essay, in the \textbf{university's contracted} tool & \textcolor{GoGreen}{\faCheck} & Vendor is a school official \\[3pt]
+\rowcolor{white}
+Upload the class gradebook to summarize performance & \textcolor{SoftCoral}{\faTimes} & Grades are PII \\[3pt]
+\rowcolor{PaleSage}
+Course chatbot \textbf{trained on} student submissions & \textcolor{SoftCoral}{\faTimes} & Needs approval + DPA \\[3pt]
+\rowcolor{white}
+AI to draft a \textbf{generic} rubric or lecture (no student data) & \textcolor{GoGreen}{\faCheck} & No education records involved \\[2pt]
+\end{tabular}
+}
+\vskip5pt
+\begin{tcolorbox}[quotebox, width=12.5cm, top=3pt, bottom=3pt]
+\small The dividing line is almost always: \textbf{identifiable student data + a tool that isn't institutionally controlled.}
+\end{tcolorbox}
+\end{frame}
+
+%% ====== SLIDE 11: THE MODEL-TRAINING QUESTION ======
+\begin{frame}{The Question Everyone Asks: ``Does It Train on My Data?''}
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\begin{tcolorbox}[keybox, title={\faBrain\quad The FERPA answer}, top=3pt, bottom=3pt]
+\small
+Under the school-official exception, a vendor may use PII \textbf{only for the contracted purpose} and may not reuse it for its own ends.
+\vskip3pt
+So training a vendor's models on \textbf{identifiable} student records is an \textbf{unauthorized reuse} --- unless you authorize it.
+\vskip3pt
+\textbf{De-identified} data is outside FERPA --- training on it is fine.
+\end{tcolorbox}
+\vskip3pt
+\cmcite{ED 2014/2016 guidance; CRS R46799. A sound inference from the use-limitation rule --- ED has no AI-specific ruling.}
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{tcolorbox}[coralbox, title={\faExclamationTriangle\quad The vendor reality}, top=2pt, bottom=2pt]
+\small
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item OpenAI, MS 365 Copilot, and Claude (\textbf{commercial/edu} tiers) all state they don't train on your prompts \emph{by default}.
+  \item These are \textbf{vendor statements}, not FERPA rulings --- and consumer tiers are excluded.
+  \item Only \textbf{Microsoft} publishes an explicit FERPA ``school-official'' commitment.
+\end{itemize}
+\end{tcolorbox}
+\vskip3pt
+\cmcite{Full three-way comparison on the final (reference) slide.}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 12: ENFORCEMENT REALITY ======
+\begin{frame}{So How Worried Should You Be? The Enforcement Reality}
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\begin{tcolorbox}[keybox, title={\faBalanceScale\quad How FERPA is enforced}, top=3pt, bottom=3pt]
+\small
+\begin{itemize}\setlength{\itemsep}{2pt}
+  \item \textbf{No private right of action} --- a student cannot sue you under FERPA \cmcite{(\textit{Gonzaga v. Doe}, 2002)}.
+  \item ED's ultimate stick is \textbf{withdrawing federal funds} --- never actually used.
+  \item Real ed-tech enforcement has run through \textbf{COPPA/FTC}, not FERPA (Edmodo, \$6M, 2023).
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{tcolorbox}[accentbox]
+\small
+\textbf{So the real exposure is \textbf{institutional and reputational}}, not a lawsuit.
+\vskip3pt
+That's exactly why your university \textbf{vets and contracts} tools centrally --- and why the safe move is to \textbf{use the approved one}.
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[quotebox, top=2pt, bottom=2pt]
+\scriptsize ED's only recent vendor action (the May 2026 Canvas/Instructure letter) was about a \textbf{data breach} --- not AI. There is still \textbf{no AI-specific FERPA guidance}.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE 12: TAKEAWAYS ======
+\begin{frame}{Takeaways: A Faculty Checklist}
+\vskip2pt
+\begin{tcolorbox}[keybox, title={\faClipboardCheck\quad Before you put student data in any AI tool}]
+\small
+\begin{enumerate}\setlength{\itemsep}{4pt}
+  \item Is it \textbf{identifiable} student data? (Remember: PII is broader than names.)
+  \item If yes --- is the tool \textbf{institutionally vetted / contracted}? If not, \textbf{stop}.
+  \item Or can you \textbf{properly de-identify} it (risk-based, hard in small classes)?
+  \item When in doubt, run the ToS through ED's \textbf{Model ToS checklist} and ask your \textbf{privacy office}.
+\end{enumerate}
+\end{tcolorbox}
+\vskip6pt
+\begin{tcolorbox}[accentbox, width=12.5cm]
+\centering\small \textbf{The one thing to remember:} approved tool \emph{or} de-identify --- never identifiable student data in a personal AI account.
+\end{tcolorbox}
+\end{frame}
+
+%% ====== REFERENCE SLIDE: VENDOR COMPARISON (for Q&A / backup) ======
+\begin{frame}{Reference: The Three Enterprise Tools, Compared}
+\vskip-2pt
+{\footnotesize
+\begin{tabular}{>{\raggedright\arraybackslash}m{3.9cm} >{\centering\arraybackslash}m{2.7cm} >{\centering\arraybackslash}m{2.7cm} >{\centering\arraybackslash}m{2.7cm}}
+\rowcolor{SlateTeal}
+\textcolor{white}{\textbf{}} & \textcolor{white}{\textbf{ChatGPT Edu / Enterprise}} & \textcolor{white}{\textbf{MS 365 Copilot}} & \textcolor{white}{\textbf{Claude Edu / Enterprise}} \\[1pt]
+\rowcolor{PaleSage}
+Trains on your data by default? & \textcolor{GoGreen}{\textbf{No}} & \textcolor{GoGreen}{\textbf{No}} & \textcolor{GoGreen}{\textbf{No}} \\[1pt]
+\rowcolor{white}
+Consumer tier trains by default? & Yes (opt-out) & N/A & \textbf{Yes} since Aug 2025 \\[1pt]
+\rowcolor{PaleSage}
+Explicit FERPA ``school official'' language? & \textcolor{SoftCoral}{No} & \textcolor{GoGreen}{\textbf{Yes}} (99.33(a)) & \textcolor{SoftCoral}{No} (processor + DPA) \\[1pt]
+\rowcolor{white}
+Data Processing Addendum? & Yes & Yes (OST DPA) & Yes (auto-incl.) \\[1pt]
+\rowcolor{PaleSage}
+Retention & Configurable & Configurable & Until deleted (API: 30d) \\[1pt]
+\rowcolor{white}
+Zero-data-retention option? & Via API & --- & \textbf{API only, not chat} \\[1pt]
+\end{tabular}
+}
+\vskip4pt
+\begin{tcolorbox}[quotebox, width=13cm, top=2pt, bottom=2pt]
+\scriptsize All entries are \textbf{vendor representations}, not adjudicated FERPA compliance --- terms change fast. \textbf{Microsoft} alone publishes an explicit FERPA school-official commitment; the others rely on the contract/DPA + institutional vetting. \cmcite{Sources: openai.com, learn.microsoft.com, privacy.claude.com --- as of June 2026.}
+\end{tcolorbox}
+\end{frame}
+
+\end{document}
