@@ -1,0 +1,1 @@
+Grade the attached research proposal (proposal_medium_PFL.docx) using the attached grading instructions and rubric (grading_instructions_rp04.txt). Follow the instructions exactly, including the 5-level scale with no interpolation, and produce the Score Breakdown table, Feedback, Next Steps for the Final Paper, and the instructor flag, in that order.

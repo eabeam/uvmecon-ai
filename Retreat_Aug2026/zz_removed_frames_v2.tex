@@ -1,0 +1,149 @@
+%% Frames removed from retreat_emily.tex on 2026-08-26 (Part 2 pivot to rubrics + Copilot). Paste back if needed.
+
+%% ====== SLIDE: THE ASSIGNMENT ======
+\begin{frame}{The assignment I want to grade}
+\vskip-8pt
+\begin{center}
+\includegraphics[width=0.75\textwidth, height=0.78\textheight, keepaspectratio]{ed4_assignment.png}
+\end{center}
+\end{frame}
+
+%% ====== SLIDE: DECISION FLOW ======
+\begin{frame}{The decision flow: student work $\rightarrow$ AI}
+\vskip-2pt
+\begin{center}
+\includegraphics[width=0.92\textwidth]{ferpa-student-work-decision-flow.png}
+\end{center}
+\vskip2pt
+{\scriptsize\color{CoolGray} Some student work has identifiable \emph{content} that isn't a named entity --- e.g., ``My grandma was the first female marble cutter in Rutland.'' Scripts strip names and IDs; they can't catch this. For these cases, route to Copilot instead.\par}
+\end{frame}
+
+
+%% ====== SLIDE: WHAT THE GUARDRAIL TAUGHT ME ======
+\begin{frame}{What ten weeks of running a guardrail taught me}
+\vskip-4pt
+{\small In June I showed a list of file types it blocks. Here's what actually happened after.\par}
+\vskip2pt
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{tcolorbox}[dontbox, title={\faEyeSlash\quad It failed silently}, top=2pt, bottom=2pt]
+\scriptsize A one-line shell quirk made it fail \emph{open} for about a month. Nothing told me. Fix: it now logs one line every time it runs --- and it still crashes now and then (17 times since June; twice this week).
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[dontbox, title={\faBan\quad It over-blocks}, top=2pt, bottom=2pt]
+\scriptsize It matches the \emph{text} of a command, not what the command does. This week it refused to write \textbf{this slide}, because the slide mentioned \texttt{.csv} and \texttt{grep}.
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{tcolorbox}[keybox, title={\faFolderOpen\quad The leak wasn't in the files}, top=2pt, bottom=2pt]
+\scriptsize Brightspace puts student names in the \emph{folder titles}. Listing the folder was the disclosure. The guard now blocks \emph{listing} those folders, not just reading them.
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[keybox, title={\faHandPaper\quad Deliberate holes}, top=2pt, bottom=2pt]
+\scriptsize Spreadsheets aren't blocked (too much friction for tables I make myself); one mail script is allow-listed. Every hole is a judgment call, written down in the script.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\vskip2pt
+\begin{tcolorbox}[quotebox, top=1pt, bottom=1pt]
+\scriptsize \textbf{Since June:} $\sim$62,000 tool calls $\cdot$ $\sim$640 blocked ($\sim$1\%) $\cdot$ 17 silent crashes. \textbf{The principle survived} --- a script may read PII, the agent may not. The implementation is disposable, and I expect to rewrite it.
+\end{tcolorbox}
+\end{frame}
+
+
+%% ====== SLIDE: LIVE — ONE STEP ======
+{
+\setbeamertemplate{footline}{}
+\setbeamercolor{background canvas}{bg=DarkSlate}
+\begin{frame}[plain]
+\centering\vfill
+{\fontsize{20}{26}\bfseries\selectfont\color{white} \faTerminal\quad Live: one step}\\[10pt]
+{\color{UVMGold}\rule{6cm}{0.8pt}}\\[10pt]
+{\normalsize\color{PaleSage} \texttt{deidentify.py} --- the step that decides what the agent is allowed to see}\\[4pt]
+{\small\color{CoolGray} 3 submissions \;$\cdot$\; about five seconds \;$\cdot$\; no agent, no permission prompts}
+\vfill
+\end{frame}
+}
+
+%% ====== SLIDE: WHAT THE REST PRODUCED (PRE-RUN) ======
+\begin{frame}{What the rest of the pipeline produced (run this morning)}
+\vskip-6pt
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\begin{tcolorbox}[pipelinebox, title={\faListOl\quad count\_words.py --- the deterministic gate}, top=2pt, bottom=2pt]
+\scriptsize\ttfamily
+STU01: 424 words\\
+STU02: 456 words\\
+STU03: 570 words\\
+0 flagged of 3
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[pipelinebox, title={\faBrain\quad grade.py --- the agent, on anonymous text only}, top=2pt, bottom=2pt]
+\scriptsize\ttfamily
+STU01: 2/2\\
+STU02: 1/2 \ \ -> review queue\\
+\ \ \ \ \ \textrm{\itshape ``All three questions addressed, but the Coase discussion misapplies the theorem --- proposes subsidies rather than bargaining; never engages the transaction-cost problem.''}\\
+STU03: 2/2
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{tcolorbox}[pipelinebox, title={\faFileCsv\quad reconcile.py --- names go back on}, top=2pt, bottom=2pt]
+\scriptsize\ttfamily
+Reconciled 3 submissions -> grades/final\_grades.csv\\
+1 in the manual-review queue
+\vskip3pt
+\textrm{\scriptsize A script reads the crosswalk and writes the sheet. Its output never enters the agent's conversation.}
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[accentbox, top=3pt, bottom=3pt]
+\small \textbf{The flag is the product.} The 2/2s I skim. The 1/2 I actually read --- and the justification tells me where to look.
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[quotebox, top=2pt, bottom=2pt]
+\scriptsize Real run last term: 18 essays, 16 auto-graded in $\sim$4 min, 1 flagged, 1 export gotcha (Brightspace shipped an embedded doc as an 8-word file --- the pipeline can't know that; I can).
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%% ====== SLIDE: WHAT THE AGENT SEES AND WHAT STAYS YOURS ======
+\begin{frame}{What the agent sees --- and what stays yours}
+\vskip2pt
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{tcolorbox}[pipelinebox, title={\faEye\quad The agent receives}]
+\scriptsize
+\texttt{anon\_id: STU04}\\
+\texttt{Question 1: Describe the economic tradeoff\ldots}\\
+\texttt{Student response: The opportunity cost\ldots [391 words]}\\[3pt]
+No name. No student ID. No course section.
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[pipelinebox, title={\faBrain\quad The agent returns}]
+\scriptsize
+\begin{itemize}\setlength{\itemsep}{1pt}
+  \item \textbf{Score} (0 / 1 / 2 per rubric)
+  \item \textbf{Justification} (1--2 sentences)
+  \item \textbf{Review queue}: flag if borderline
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{tcolorbox}[keybox, title={\faUserCheck\quad Your judgment}]
+\scriptsize
+\begin{itemize}\setlength{\itemsep}{2pt}
+  \item \textbf{Edge cases}: embedded links, borderline word counts
+  \item \textbf{Rubric calls}: you set the rubric, review anything the explanation doesn't support
+  \item \textbf{Final sign-off}: the grade sheet is yours before upload
+\end{itemize}
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[accentbox, top=3pt, bottom=3pt]
+\scriptsize
+The pipeline handles \textbf{mechanical work at scale}. \textbf{Pedagogical judgment} --- what counts as thoughtful, what warrants a flag --- is \textbf{still yours}.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
