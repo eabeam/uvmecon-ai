@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.30)  26 AUG 2026 19:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.30)  26 AUG 2026 19:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1448,18 +1448,49 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 7
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [17
 
-] [18
-
-] [19
-
 ]
+<figures/rp04_assignment.png, id=159, 830.10126pt x 659.46375pt>
+File: figures/rp04_assignment.png Graphic file (type png)
+<use figures/rp04_assignment.png>
+Package pdftex.def Info: figures/rp04_assignment.png  used on input line 727.
+(pdftex.def)             Requested size: 219.89978pt x 174.69667pt.
+ [18
+
+ <./figures/rp04_assignment.png>]
+<figures/fake_proposal_p1.png, id=166, 614.295pt x 794.97pt>
+File: figures/fake_proposal_p1.png Graphic file (type png)
+<use figures/fake_proposal_p1.png>
+Package pdftex.def Info: figures/fake_proposal_p1.png  used on input line 753.
+(pdftex.def)             Requested size: 138.64157pt x 179.41852pt.
+
+Overfull \vbox (3.17712pt too high) detected at line 753
+ []
+
+[19
+
+ <./figures/fake_proposal_p1.png (PNG copy)>]
+<figures/rp04_prompts.png, id=173, 237.88875pt x 128.48pt>
+File: figures/rp04_prompts.png Graphic file (type png)
+<use figures/rp04_prompts.png>
+Package pdftex.def Info: figures/rp04_prompts.png  used on input line 789.
+(pdftex.def)             Requested size: 151.36584pt x 81.75444pt.
+
+Overfull \vbox (23.10999pt too high) detected at line 789
+ []
+
 [20
 
-] [21
+ <./figures/rp04_prompts.png>] [21
 
 ] [22
 
 ] [23
+
+] [24
+
+] [25
+
+] [26
 
 ]
 \tf@nav=\write6
@@ -1471,7 +1502,8 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 \tf@snm=\write8
 \openout8 = `retreat_emily.snm'.
 
- (./retreat_emily.aux)
+
+(./retreat_emily.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1480,10 +1512,10 @@ Package rerunfilecheck Info: File `retreat_emily.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36306 strings out of 474116
- 765714 string characters out of 5743682
+ 36362 strings out of 474116
+ 767003 string characters out of 5743682
  1953187 words of memory out of 5000000
- 57912 multiletter control sequences out of 15000+600000
+ 57962 multiletter control sequences out of 15000+600000
  644664 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,13n,123p,388b,898s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1500,10 +1532,10 @@ c/lm/lmsso9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5
 local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texli
 ve/2024/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on retreat_emily.pdf (23 pages, 3351613 bytes).
+Output written on retreat_emily.pdf (26 pages, 4029924 bytes).
 PDF statistics:
- 279 PDF objects out of 1000 (max. 8388607)
- 186 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
- 197 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 301 PDF objects out of 1000 (max. 8388607)
+ 200 compressed objects within 2 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 212 words of extra memory for PDF output out of 10000 (max. 10000000)
 
