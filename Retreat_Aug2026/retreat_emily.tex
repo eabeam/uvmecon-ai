@@ -627,39 +627,6 @@ AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoG
 \end{tcolorbox}
 \end{frame}
 
-%% ====== SLIDE: WHAT 17 PAPERS TAUGHT ME ======
-\begin{frame}{What grading 17 research papers with agents taught me}
-\vskip-4pt
-{\small ECON 3500 final papers, May 2026: 18 criteria, 102 points, replication code included.\par}
-\vskip2pt
-\begin{columns}[T]
-\begin{column}{0.49\textwidth}
-\begin{tcolorbox}[dobox, title={\faCheck\quad What worked}, top=2pt, bottom=2pt]
-\scriptsize
-\begin{itemize}\setlength{\itemsep}{2pt}
-  \item \textbf{Different agents, different jobs.} A fair grader, a strict grader, an auditor, an injection scan --- plus separate citation, data, and replication audits.
-  \item \textbf{Checks beat scores.} 133 citations verified, 0 fabricated. The audits caught a log that crashed at the merge, a 14-line do-file, a blank template --- content grading missed all three.
-  \item \textbf{Disagreement is the product.} Only papers where the graders disagreed came to me.
-\end{itemize}
-\end{tcolorbox}
-\end{column}
-\begin{column}{0.49\textwidth}
-\begin{tcolorbox}[dontbox, title={\faExclamationTriangle\quad What to watch}, top=2pt, bottom=2pt]
-\scriptsize
-\begin{itemize}\setlength{\itemsep}{2pt}
-  \item \textbf{Drift.} First pass under-scored 11 of 17 papers (blind regrade: mean $+6.4$ on 108). Agents hedge when anchors are vague --- a 4.8 where the criterion was met.
-  \item \textbf{One pass is never enough.} Cursory $\rightarrow$ grade $\rightarrow$ audit $\rightarrow$ blind regrade $\rightarrow$ harshness audit. 2.5 hours to feedback documents; three more sessions to get it right.
-  \item \textbf{Models differ --- and it moves.} In April, Claude followed the rubric more faithfully than Codex; yesterday, on one proposal, Codex was closest. Check yours, and re-check.
-\end{itemize}
-\end{tcolorbox}
-\end{column}
-\end{columns}
-\vskip3pt
-\begin{tcolorbox}[accentbox, top=2pt, bottom=2pt]
-\small Every correction landed on a \emph{judgment} criterion with an interpolated scale. None landed on a gate or a check.
-\end{tcolorbox}
-\end{frame}
-
 %% ====== SLIDE: A RUBRIC AN AGENT CAN GRADE ======
 \begin{frame}{A rubric an agent can grade}
 \vskip-4pt
@@ -671,30 +638,32 @@ AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoG
   \item \textbf{Cursory pass first.} Skim everything, list the edge cases, write the rules \emph{before} grading (raw Stata output? null results? missing heading vs.\ missing section?).
   \item \textbf{``Full points when\ldots''} --- criterion-based, not norm-referenced. ``4 = exceptional'' produces hedged 4.8s.
   \item \textbf{Gates over sliders.} Word count, all questions present, attribution statement: binary and stable. Six-point scales drift.
-  \item \textbf{Split check from judge.} Checks (does it name the externality? does the log show output?) are where AI is reliable. Judgment stays yours.
+  \item \textbf{Split check from judge.} Checks (are there four peer-reviewed sources? is there an equation with the variables defined?) are where AI is reliable. Judgment stays yours.
   \item \textbf{Plan the second pass.} Budget it. You'll recalibrate.
 \end{enumerate}
 \end{tcolorbox}
 \end{column}
 \begin{column}{0.46\textwidth}
-\begin{tcolorbox}[pipelinebox, title={\faFile\quad Economic Delights 4, rewritten}, top=2pt, bottom=2pt]
+\begin{tcolorbox}[pipelinebox, title={\faFile\quad ``Literature'' (4 pts), rewritten}, top=2pt, bottom=2pt]
 \scriptsize\ttfamily
-gates (deterministic):\\
-\ \ words >= 350 \ \ \ \ \ \ \ else flag, max 1\\
-\ \ all 3 questions addressed\\[2pt]
-checks (agent -- reliable):\\
-\ \ names the externality (noise)\\
-\ \ Mumbai mechanism described correctly\\
-\ \ says whether Coase applies, and why\\[2pt]
-judge (you):\\
-\ \ quality of the NYC transfer argument\\[2pt]
-score: 2 = all checks pass\\
-\ \ \ \ \ \ \ 1 = one miss \ \ 0 = gate fail\\
-flag:  borderline or gate fail -> you
+\newcommand{\rind}{\hspace*{1.3em}}%
+\textbf{gates} (deterministic):\\
+\rind >= 4 peer-reviewed in lit review\\
+\rind distinct from the 2 intro sources\\
+\rind NBER / World Bank / gov't = not\\[3pt]
+\textbf{checks} (agent -- reliable):\\
+\rind every source actually discussed\\
+\rind each one linked back to the RQ\\
+\rind what's known vs. still unknown\\[3pt]
+\textbf{judge} (you):\\
+\rind synthesis, or summary?\\[3pt]
+\textbf{score}: 4 = gates pass + all checks\\
+\hspace*{3.9em} 3 = one check missed\\
+\hspace*{3.9em} 0 = gate fail -> flag
 \end{tcolorbox}
 \vskip3pt
 \begin{tcolorbox}[accentbox, top=2pt, bottom=2pt]
-\scriptsize The original said ``thoughtfully addresses all questions.'' That's a judgment word doing a gate's job.
+\scriptsize The original said ``important literature discussed.'' That's a judgment word doing a gate's job --- and it's the line every grader inflated.
 \end{tcolorbox}
 \end{column}
 \end{columns}
@@ -862,6 +831,37 @@ flag:  borderline or gate fail -> you
 \vskip6pt
 \begin{tcolorbox}[accentbox, halign=center, top=3pt, bottom=3pt]
 \small The substance is theirs. The voice is a five-minute edit.
+\end{tcolorbox}
+\end{frame}
+
+%% ====== SLIDE: WHAT IT TAKES TO TRUST IT ======
+\begin{frame}{What grading with agents actually taught me}
+\vskip-4pt
+\begin{columns}[T]
+\begin{column}{0.49\textwidth}
+\begin{tcolorbox}[dobox, title={\faCheck\quad What worked}, top=2pt, bottom=2pt]
+\scriptsize
+\begin{itemize}\setlength{\itemsep}{2pt}
+  \item \textbf{Different agents, different jobs.} A fair grader, a strict grader, an auditor, an injection scan --- plus separate citation, data, and replication audits.
+  \item \textbf{Checks beat scores.} 133 citations verified, 0 fabricated. The audits caught a log that crashed at the merge, a 14-line do-file, a blank template --- content grading missed all three.
+  \item \textbf{Disagreement is the product.} Only the papers where the graders disagreed came to me.
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.49\textwidth}
+\begin{tcolorbox}[dontbox, title={\faExclamationTriangle\quad What to watch}, top=2pt, bottom=2pt]
+\scriptsize
+\begin{itemize}\setlength{\itemsep}{2pt}
+  \item \textbf{Drift is up, and it's on the judgment lines.} You just saw it: four graders, four scores above the key, every gap on a criterion with an interpolated scale.
+  \item \textbf{One pass is never enough.} Cursory $\rightarrow$ grade $\rightarrow$ audit $\rightarrow$ blind regrade $\rightarrow$ harshness audit. Hours to the first feedback document; more sessions to get it right.
+  \item \textbf{Models differ --- and it moves.} In April, Claude followed the rubric more faithfully than Codex; yesterday, on one proposal, Codex was closest. Check yours, and re-check.
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\vskip3pt
+\begin{tcolorbox}[accentbox, top=2pt, bottom=2pt]
+\small Every correction I've had to make landed on a \emph{judgment} criterion with an interpolated scale. None landed on a gate or a check.
 \end{tcolorbox}
 \end{frame}
 
