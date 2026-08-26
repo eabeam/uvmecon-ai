@@ -629,7 +629,7 @@ AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoG
 
 %% ====== SLIDE: A RUBRIC AN AGENT CAN GRADE ======
 \begin{frame}{A rubric an agent can grade}
-\vskip-4pt
+\vskip-9pt
 \begin{columns}[T]
 \begin{column}{0.50\textwidth}
 \begin{tcolorbox}[keybox, title={\faListOl\quad Five rules}, top=2pt, bottom=2pt]
@@ -644,26 +644,23 @@ AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoG
 \end{tcolorbox}
 \end{column}
 \begin{column}{0.46\textwidth}
-\begin{tcolorbox}[pipelinebox, title={\faFile\quad ``Literature'' (4 pts), rewritten}, top=2pt, bottom=2pt]
-\scriptsize\ttfamily
-\newcommand{\rind}{\hspace*{1.3em}}%
-\textbf{gates} (deterministic):\\
-\rind >= 4 peer-reviewed in lit review\\
-\rind distinct from the 2 intro sources\\
-\rind NBER / World Bank / gov't = not\\[3pt]
-\textbf{checks} (agent -- reliable):\\
-\rind every source actually discussed\\
-\rind each one linked back to the RQ\\
-\rind what's known vs. still unknown\\[3pt]
-\textbf{judge} (you):\\
-\rind synthesis, or summary?\\[3pt]
-\textbf{score}: 4 = gates pass + all checks\\
-\hspace*{3.9em} 3 = one check missed\\
-\hspace*{3.9em} 0 = gate fail -> flag
+\begin{tcolorbox}[quotebox, top=1pt, bottom=1pt]
+\scriptsize
+\textit{``Important literature discussed and linked to the RQ; at least four peer-reviewed sources distinct from the intro.''}\hfill\textbf{4 pts}
 \end{tcolorbox}
-\vskip3pt
-\begin{tcolorbox}[accentbox, top=2pt, bottom=2pt]
-\scriptsize The original said ``important literature discussed.'' That's a judgment word doing a gate's job --- and it's the line every grader inflated.
+\vskip1pt
+\begin{center}{\color{CoolGray}\scriptsize $\downarrow$\ \ three different questions\ \ $\downarrow$}\end{center}
+\vskip1pt
+\begin{tcolorbox}[dobox, title={\faCheck\quad Countable --- make it a gate}, top=1pt, bottom=1pt, fonttitle=\bfseries\scriptsize]
+\scriptsize Four peer-reviewed, distinct from the intro's two. A working paper isn't one.
+\end{tcolorbox}
+\vskip2pt
+\begin{tcolorbox}[pipelinebox, title={\faSearch\quad Checkable --- hand it to the agent}, top=1pt, bottom=1pt]
+\scriptsize Is each source actually discussed, not just cited? Tied back to the question?
+\end{tcolorbox}
+\vskip2pt
+\begin{tcolorbox}[accentbox, top=1pt, bottom=1pt]
+\scriptsize \textbf{\faBalanceScale\ \ Judgment --- yours.} Synthesis, or summary? \emph{Every grader inflated this one.}
 \end{tcolorbox}
 \end{column}
 \end{columns}
