@@ -803,25 +803,28 @@ Synthesis, or summary?
 \rowcolor{PaleSage} Threats (2) & 1.5 & 2 & 2 & 2 & 2 & 2 \\
 \rowcolor{white}    Presentation (10) & 8.5 & 9.5 & 9.5 & 9.5 & 9.5 & \textbf{8.5} \\
 \rowcolor{LightGold} \textbf{Total (38)} & \textbf{28.5} & \textbf{34} & \textbf{32.5} & \textbf{34.5} & \textbf{32} & \textbf{31.5} \\
-\rowcolor{white}    Flaws deducted (of 13) & --- & 4 & 6 & 3 & 6 \\
-\rowcolor{PaleSage} Flaws invented & --- & 0 & 0 & 0 & 0 \\
+\rowcolor{white}    Noticed (of 14) & --- & 7$^{*}$ & 13 & 8 & 11 & 13 \\
+\rowcolor{PaleSage} Deducted for & --- & 6$^{*}$ & 10 & 6 & 9 & \textbf{12} \\
+\rowcolor{white}    Flaws invented & --- & 0 & 0 & 0 & 0 & 0 \\
 \end{tabular}
 }
 \vskip4pt
-{\scriptsize\color{CoolGray} Copilot (UVM NetID) $\cdot$ Fable 5, Sonnet 5, Opus 5 as fresh blind agents $\cdot$ Codex (GPT-5.6-sol, high) by hand.\par}
+{\scriptsize\color{CoolGray} Copilot (UVM NetID) $\cdot$ Fable 5, Sonnet 5, Opus 5 as fresh blind agents $\cdot$ Codex (GPT-5.6-sol, high) by hand.\\
+$^{*}$Copilot is a floor: only its score breakdown was captured.\par}
 \end{column}
 \begin{column}{0.44\textwidth}
 \begin{tcolorbox}[keybox, title={\faSearch\quad What happened}, top=2pt, bottom=2pt]
 \small
 \begin{itemize}\setlength{\itemsep}{3pt}
-  \item Everyone drifted up --- on the judgment criteria.
-  \item The checks held: both overclaims, the missing reference, the source count.
-  \item Nobody hallucinated. Sonnet noticed nine flaws and deducted for three.
+  \item \textbf{Everyone drifted up} --- always on the judgment criteria. But not equally: Opus $+3$, Sonnet $+6$.
+  \item \textbf{The checks held.} Both overclaims, the missing reference, the source count: all five.
+  \item \textbf{The gap is ``noticed'' vs.\ ``deducted.''} Sonnet saw 8 and cut for 6. Opus saw 13 and cut for 12.
+  \item \textbf{Nobody invented anything.} Zero hallucinated defects, all five.
 \end{itemize}
 \end{tcolorbox}
 \vskip4pt
-\begin{tcolorbox}[accentbox, top=2pt, bottom=2pt]
-\small \textbf{Read the notes, not the numbers.}
+\begin{tcolorbox}[accentbox, top=1pt, bottom=1pt]
+\scriptsize \textbf{Read the notes, not the numbers.} And one planted flaw \textbf{nobody caught} --- all five said the opposite.
 \end{tcolorbox}
 \end{column}
 \end{columns}
