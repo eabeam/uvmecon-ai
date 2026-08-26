@@ -627,40 +627,76 @@ AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoG
 \end{tcolorbox}
 \end{frame}
 
-%% ====== SLIDE: A RUBRIC AN AGENT CAN GRADE ======
+%% ====== SLIDE: A RUBRIC AN AGENT CAN GRADE (1/2) ======
 \begin{frame}{A rubric an agent can grade}
-\vskip-9pt
+\vskip-2pt
 \begin{columns}[T]
-\begin{column}{0.50\textwidth}
-\begin{tcolorbox}[keybox, title={\faListOl\quad Five rules}, top=2pt, bottom=2pt]
+\begin{column}{0.32\textwidth}
+\begin{tcolorbox}[pipelinebox, title={\faBook\quad Before you write it}, top=2pt, bottom=2pt]
 \scriptsize
-\begin{enumerate}\setlength{\itemsep}{2pt}
-  \item \textbf{Cursory pass first.} Skim everything, list the edge cases, write the rules \emph{before} grading (raw Stata output? null results? missing heading vs.\ missing section?).
-  \item \textbf{``Full points when\ldots''} --- criterion-based, not norm-referenced. ``4 = exceptional'' produces hedged 4.8s.
-  \item \textbf{Gates over sliders.} Word count, all questions present, attribution statement: binary and stable. Six-point scales drift.
-  \item \textbf{Split check from judge.} Checks (are there four peer-reviewed sources? is there an equation with the variables defined?) are where AI is reliable. Judgment stays yours.
-  \item \textbf{Plan the second pass.} Budget it. You'll recalibrate.
+\begin{enumerate}\setlength{\itemsep}{4pt}
+  \item \textbf{Cursory pass first.} Skim everything, list the edge cases, write the rules \emph{before} grading --- raw Stata output? null results? missing heading vs.\ missing section?
+  \item \textbf{Show it your own feedback.} Real comments you wrote to real students, plus your grades on the earlier assignments. This is the difference between generic feedback and feedback that sounds like you --- and knows what you already told them.
 \end{enumerate}
 \end{tcolorbox}
 \end{column}
-\begin{column}{0.46\textwidth}
-\begin{tcolorbox}[quotebox, top=1pt, bottom=1pt]
+\begin{column}{0.32\textwidth}
+\begin{tcolorbox}[keybox, title={\faListOl\quad In the rubric itself}, top=2pt, bottom=2pt]
 \scriptsize
+\begin{enumerate}\setlength{\itemsep}{4pt}\setcounter{enumi}{2}
+  \item \textbf{``Full points when\ldots''} --- criterion-based, not norm-referenced. ``4 = exceptional'' produces hedged 4.8s.
+  \item \textbf{Gates over sliders.} Word count, all questions present, attribution statement: binary and stable. Six-point scales drift.
+  \item \textbf{Split check from judge.} Checks are where AI is reliable. Judgment stays yours.
+\end{enumerate}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.32\textwidth}
+\begin{tcolorbox}[dobox, title={\faFlask\quad Before you trust it}, top=2pt, bottom=2pt]
+\scriptsize
+\begin{enumerate}\setlength{\itemsep}{4pt}\setcounter{enumi}{5}
+  \item \textbf{Do a test grade.} Run it on something you've already scored yourself --- last term's paper, or a fake one with flaws you planted. That's how you find out where it drifts, before it touches a real student.
+  \item \textbf{Plan the second pass.} Budget it. You will recalibrate.
+\end{enumerate}
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
+%% ====== SLIDE: A RUBRIC AN AGENT CAN GRADE (2/2) ======
+\begin{frame}{One rubric line, three different questions}
+\vskip2pt
+\begin{center}
+\begin{tcolorbox}[quotebox, width=0.93\textwidth, top=3pt, bottom=3pt]
+\small
 \textit{``Important literature discussed and linked to the RQ; at least four peer-reviewed sources distinct from the intro.''}\hfill\textbf{4 pts}
 \end{tcolorbox}
-\vskip1pt
-\begin{center}{\color{CoolGray}\scriptsize $\downarrow$\ \ three different questions\ \ $\downarrow$}\end{center}
-\vskip1pt
-\begin{tcolorbox}[dobox, title={\faCheck\quad Countable --- make it a gate}, top=1pt, bottom=1pt, fonttitle=\bfseries\scriptsize]
-\scriptsize Four peer-reviewed, distinct from the intro's two. A working paper isn't one.
+\end{center}
+\vskip3pt
+\begin{center}{\color{CoolGray}\footnotesize $\downarrow$\qquad one line, but three different kinds of question\qquad $\downarrow$}\end{center}
+\vskip4pt
+\begin{columns}[T]
+\begin{column}{0.32\textwidth}
+\begin{tcolorbox}[dobox, title={\faCheck\quad Countable}, top=2pt, bottom=2pt]
+\scriptsize
+Four peer-reviewed, distinct from the intro's two. A working paper isn't one.
+\vskip3pt
+\textbf{Make it a gate.} Same answer every time, from anyone.
 \end{tcolorbox}
-\vskip2pt
-\begin{tcolorbox}[pipelinebox, title={\faSearch\quad Checkable --- hand it to the agent}, top=1pt, bottom=1pt]
-\scriptsize Is each source actually discussed, not just cited? Tied back to the question?
+\end{column}
+\begin{column}{0.32\textwidth}
+\begin{tcolorbox}[pipelinebox, title={\faSearch\quad Checkable}, fonttitle=\bfseries\small, top=2pt, bottom=2pt]
+\scriptsize
+Is each source actually discussed, not just cited? Tied back to the question? Does it say what's still unknown?
+\vskip3pt
+\textbf{Hand it to the agent.} This is what it's reliably good at.
 \end{tcolorbox}
-\vskip2pt
-\begin{tcolorbox}[accentbox, top=1pt, bottom=1pt]
-\scriptsize \textbf{\faBalanceScale\ \ Judgment --- yours.} Synthesis, or summary? \emph{Every grader inflated this one.}
+\end{column}
+\begin{column}{0.32\textwidth}
+\begin{tcolorbox}[accentbox, title={\faBalanceScale\quad Judgment}, fonttitle=\bfseries\small, coltitle=DeepCharcoal, colbacktitle=LightGold!80, top=2pt, bottom=2pt]
+\scriptsize
+Synthesis, or summary?
+\vskip3pt
+\textbf{Keep it.} And watch it --- this is the line every grader inflated.
 \end{tcolorbox}
 \end{column}
 \end{columns}
@@ -684,10 +720,10 @@ AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoG
   \item \textbf{38 points}, five levels per criterion, ``full points when\ldots'' written out.
 \end{itemize}
 \end{tcolorbox}
-\vskip4pt
-\begin{tcolorbox}[accentbox, top=2pt, bottom=2pt]
-\scriptsize The assignment page \emph{is} a grading input. The agent reads this file before it reads a single submission.
-\end{tcolorbox}
+% \vskip4pt
+% \begin{tcolorbox}[accentbox, top=2pt, bottom=2pt]
+% \scriptsize The assignment page \emph{is} a grading input. The agent reads this file before it reads a single submission.
+% \end{tcolorbox}
 \end{column}
 \end{columns}
 \end{frame}
@@ -706,14 +742,11 @@ AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoG
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{3pt}
   \item I can't put a real student's paper on this screen --- so I wrote one. Fictional author, fictional numbers, real citations, a topic unlike anything my S26 class turned in.
-  \item \textbf{13 flaws planted on purpose}, each mapped to a rubric line: a lit review that summarizes instead of synthesizes, a working paper counted as peer-reviewed, ``this will \emph{prove}\,'' where it should hedge, a table with no group split, no clustering mentioned.
+  \item \textbf{14 flaws planted on purpose}, each mapped to a rubric line: a lit review that summarizes instead of synthesizes, a working paper counted as peer-reviewed, ``this will \emph{prove}\,'' where it should hedge, a table with no group split, no clustering mentioned.
   \item \textbf{Answer key written first}, before any grader saw it. Target: \textbf{28.5/38} --- deliberately mid, because that's where graders actually differ. (Real class: median 31.25.)
 \end{itemize}
 \end{tcolorbox}
-\vskip3pt
-\begin{tcolorbox}[accentbox, top=1pt, bottom=1pt]
-\scriptsize A grader you can't score is a grader you're trusting on vibes. This is the cheapest way I know to score one.
-\end{tcolorbox}
+
 \end{column}
 \end{columns}
 \end{frame}
@@ -726,11 +759,7 @@ AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoG
 \begin{center}
 \includegraphics[width=0.95\textwidth, keepaspectratio]{rp04_prompts}
 \end{center}
-\vskip4pt
-\begin{tcolorbox}[pipelinebox, title={\faTerminal\quad The fifth one is the whole trick}, top=2pt, bottom=2pt]
-\scriptsize
-\texttt{run-all} doesn't grade. It launches the other four \textbf{in parallel}, then adds up each student's criterion scores and checks they match the reported total. I run one file.
-\end{tcolorbox}
+
 \end{column}
 \begin{column}{0.58\textwidth}
 \begin{tcolorbox}[keybox, title={\faSitemap\quad One job each}, top=2pt, bottom=2pt]
@@ -755,31 +784,31 @@ AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoG
 \end{frame}
 
 %% ====== SLIDE: FOUR GRADERS, ONE PROPOSAL ======
-\begin{frame}{Four graders, one proposal}
+\begin{frame}{Five graders, one proposal}
 \vskip-8pt
-{\footnotesize A fake ECON 3500 proposal with 13 planted flaws. My real Spring 2026 grading prompt. Target: 28.5/38.\par}
+{\footnotesize A fake ECON 3500 proposal with 14 planted flaws. My real Spring 2026 grading prompt. Target: 28.5/38.\par}
 \vskip2pt
 \begin{columns}[T]
 \begin{column}{0.54\textwidth}
 {\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.05}
-\begin{tabular}{>{\raggedright\arraybackslash}m{2.35cm} c c c c c}
+\begin{tabular}{>{\raggedright\arraybackslash}m{2.05cm} c c c c c c}
 \rowcolor{SlateTeal}
-\textcolor{white}{\textbf{Component (pts)}} & \textcolor{white}{\textbf{Target}} & \textcolor{white}{\textbf{Copilot}} & \textcolor{white}{\textbf{Claude}} & \textcolor{white}{\textbf{Sonnet}} & \textcolor{white}{\textbf{Codex}} \\
-\rowcolor{PaleSage} Introduction (6) & 4.5 & 6 & 6 & 6 & 6 \\
-\rowcolor{white}    Literature (4) & 2 & 3 & \textbf{2} & 3 & \textbf{2} \\
-\rowcolor{PaleSage} Data + table (6) & 5 & 6 & \textbf{5} & 6 & \textbf{5} \\
-\rowcolor{white}    Empirical (10) & 7 & 7.5 & 8 & 8 & 7.5 \\
-\rowcolor{PaleSage} Threats (2) & 1.5 & 2 & 2 & 2 & 2 \\
-\rowcolor{white}    Presentation (10) & 8.5 & 9.5 & 9.5 & 9.5 & 9.5 \\
-\rowcolor{LightGold} \textbf{Total (38)} & \textbf{28.5} & \textbf{34} & \textbf{32.5} & \textbf{34.5} & \textbf{32} \\
+\textcolor{white}{\textbf{Component (pts)}} & \textcolor{white}{\textbf{Key}} & \textcolor{white}{\textbf{Copilot}} & \textcolor{white}{\textbf{Fable}} & \textcolor{white}{\textbf{Sonnet}} & \textcolor{white}{\textbf{Codex}} & \textcolor{white}{\textbf{Opus}} \\
+\rowcolor{PaleSage} Introduction (6) & 4.5 & 6 & 6 & 6 & 6 & 6 \\
+\rowcolor{white}    Literature (4) & 2 & 3 & \textbf{2} & 3 & \textbf{2} & \textbf{2} \\
+\rowcolor{PaleSage} Data + table (6) & 5 & 6 & \textbf{5} & 6 & \textbf{5} & \textbf{5} \\
+\rowcolor{white}    Empirical (10) & 7 & 7.5 & 8 & 8 & 7.5 & 8 \\
+\rowcolor{PaleSage} Threats (2) & 1.5 & 2 & 2 & 2 & 2 & 2 \\
+\rowcolor{white}    Presentation (10) & 8.5 & 9.5 & 9.5 & 9.5 & 9.5 & \textbf{8.5} \\
+\rowcolor{LightGold} \textbf{Total (38)} & \textbf{28.5} & \textbf{34} & \textbf{32.5} & \textbf{34.5} & \textbf{32} & \textbf{31.5} \\
 \rowcolor{white}    Flaws deducted (of 13) & --- & 4 & 6 & 3 & 6 \\
 \rowcolor{PaleSage} Flaws invented & --- & 0 & 0 & 0 & 0 \\
 \end{tabular}
 }
 \vskip4pt
-{\scriptsize\color{CoolGray} Copilot with my NetID. Claude and Sonnet as fresh agents. Codex by hand.\par}
+{\scriptsize\color{CoolGray} Copilot (UVM NetID) $\cdot$ Fable 5, Sonnet 5, Opus 5 as fresh blind agents $\cdot$ Codex (GPT-5.6-sol, high) by hand.\par}
 \end{column}
 \begin{column}{0.44\textwidth}
 \begin{tcolorbox}[keybox, title={\faSearch\quad What happened}, top=2pt, bottom=2pt]
@@ -805,64 +834,76 @@ AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoG
 \vskip3pt
 \begin{columns}[T]
 \begin{column}{0.49\textwidth}
-\begin{tcolorbox}[keybox, title={\faTools\quad Most useful}, top=2pt, bottom=2pt]
-\small
+\begin{tcolorbox}[keybox, title={\faTools\quad On this paper}, top=2pt, bottom=2pt]
+\scriptsize
 \begin{itemize}\setlength{\itemsep}{3pt}
-  \item \textbf{Codex.} My length. Handed the student the sentence to use instead of ``prove.''
-  \item \textbf{Claude.} Most complete. Three times my length.
-  \item \textbf{Sonnet.} Fine. Called four summaries ``genuinely good synthesis.''
-\end{itemize}
-\end{tcolorbox}
-\end{column}
-\begin{column}{0.49\textwidth}
-\begin{tcolorbox}[keybox, title={\faComment\quad Closest to my voice}, top=2pt, bottom=2pt]
-\small
-\begin{itemize}\setlength{\itemsep}{3pt}
-  \item \textbf{Claude} got the structure: the name, the quoted sentences, the headers.
-  \item \textbf{Codex} got the economy.
+  \item \textbf{Codex} wrote the best next steps --- and handed the student the exact sentence to use instead of ``prove.'' My length.
+  \item \textbf{Fable} was the most complete, and got the structure of my feedback: the name, the quoted sentences, the headers. Three times my length.
+  \item \textbf{Sonnet} was fine --- but called four summaries ``genuinely good synthesis.''
   \item \textbf{Nobody} got the pivot. No ``That said,'' no closing on the positive.
 \end{itemize}
 \end{tcolorbox}
 \end{column}
-\end{columns}
-\vskip6pt
-\begin{tcolorbox}[accentbox, halign=center, top=3pt, bottom=3pt]
-\small The substance is theirs. The voice is a five-minute edit.
-\end{tcolorbox}
-\end{frame}
-
-%% ====== SLIDE: WHAT IT TAKES TO TRUST IT ======
-\begin{frame}{What grading with agents actually taught me}
-\vskip-4pt
-\begin{columns}[T]
 \begin{column}{0.49\textwidth}
-\begin{tcolorbox}[dobox, title={\faCheck\quad What worked}, top=2pt, bottom=2pt]
+\begin{tcolorbox}[dontbox, title={\faExclamationTriangle\quad But across everything I've graded}, top=2pt, bottom=2pt]
 \scriptsize
-\begin{itemize}\setlength{\itemsep}{2pt}
-  \item \textbf{Different agents, different jobs.} A fair grader, a strict grader, an auditor, an injection scan --- plus separate citation, data, and replication audits.
-  \item \textbf{Checks beat scores.} 133 citations verified, 0 fabricated. The audits caught a log that crashed at the merge, a 14-line do-file, a blank template --- content grading missed all three.
-  \item \textbf{Disagreement is the product.} Only the papers where the graders disagreed came to me.
+\begin{itemize}\setlength{\itemsep}{3pt}
+  \item \textbf{Codex has been the harsher grader}, and the least likely to pad a score. That part is genuinely useful.
+  \item \textbf{But it reflects less.} It applies criteria in odd ways, and the feedback comes out less constructive.
+  \item \textbf{And it doesn't get my voice} --- consistently the furthest from how I actually write to a student.
+  \item \emph{All of which may change with the next model. This is a snapshot, not a ranking.}
 \end{itemize}
 \end{tcolorbox}
 \end{column}
-\begin{column}{0.49\textwidth}
-\begin{tcolorbox}[dontbox, title={\faExclamationTriangle\quad What to watch}, top=2pt, bottom=2pt]
+\end{columns}
+
+\end{frame}
+
+%% ====== SLIDE: SUMMARY ======
+\begin{frame}{What I'd actually tell you to do}
+\vskip-2pt
+\begin{columns}[T]
+\begin{column}{0.32\textwidth}
+\begin{tcolorbox}[dobox, title={\faCheck\quad Do}, top=2pt, bottom=2pt]
 \scriptsize
-\begin{itemize}\setlength{\itemsep}{2pt}
-  \item \textbf{Drift is up, and it's on the judgment lines.} You just saw it: four graders, four scores above the key, every gap on a criterion with an interpolated scale.
-  \item \textbf{One pass is never enough.} Cursory $\rightarrow$ grade $\rightarrow$ audit $\rightarrow$ blind regrade $\rightarrow$ harshness audit. Hours to the first feedback document; more sessions to get it right.
-  \item \textbf{Models differ --- and it moves.} In April, Claude followed the rubric more faithfully than Codex; yesterday, on one proposal, Codex was closest. Check yours, and re-check.
+\begin{itemize}\setlength{\itemsep}{3pt}
+  \item \textbf{Split the rubric.} Countable $\rightarrow$ gate. Checkable $\rightarrow$ agent. Judgment $\rightarrow$ you.
+  \item \textbf{Give it your context.} The assignment, and your own past feedback.
+  \item \textbf{One job per pass}, and let them disagree --- the disagreements are the product.
+  \item \textbf{De-identify first.} Mine never sees a name, which is what lets me use whatever model grades best.
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.32\textwidth}
+\begin{tcolorbox}[dontbox, title={\faExclamationTriangle\quad Expect}, top=2pt, bottom=2pt]
+\scriptsize
+\begin{itemize}\setlength{\itemsep}{3pt}
+  \item \textbf{It drifts up} --- and always on the judgment lines. You just watched five graders do it.
+  \item \textbf{One pass is never enough.} Budget the second one.
+  \item \textbf{Models differ, and it moves.} What was true in April wasn't true yesterday.
+  \item \textbf{The checks hold.} 133 citations verified, none fabricated; the audits caught a crashed log, a 14-line do-file, a blank template.
+\end{itemize}
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.32\textwidth}
+\begin{tcolorbox}[keybox, title={\faBalanceScale\quad When it's worth it}, top=2pt, bottom=2pt]
+\scriptsize
+\begin{itemize}\setlength{\itemsep}{3pt}
+  \item \textbf{Worth it} when there are many submissions, many criteria, and real mechanical checking to do.
+  \item \textbf{Not worth the plumbing} for three-question essays --- Copilot and a good rubric are enough. The rubric is the same file either way.
+  \item \textbf{At 21 submissions it wasn't clearly faster.} It was more consistent.
 \end{itemize}
 \end{tcolorbox}
 \end{column}
 \end{columns}
 \vskip3pt
-\begin{tcolorbox}[accentbox, top=2pt, bottom=2pt]
-\small Every correction I've had to make landed on a \emph{judgment} criterion with an interpolated scale. None landed on a gate or a check.
+\begin{tcolorbox}[accentbox, halign=center, top=1pt, bottom=1pt]
+\small Every correction I've had to make landed on a \emph{judgment} criterion. None landed on a gate or a check.
 \end{tcolorbox}
 \end{frame}
 
-%% ====== SLIDE: THE PIPELINE ======
+%% ====== SLIDE: THE PIPELINE ====== (CUT 2026-08-26 by Emily; \iffalse ... \fi to restore)
+\iffalse
 \begin{frame}{What I do at scale --- same rubric, different plumbing}
 \vskip-4pt
 \begin{center}
@@ -918,6 +959,8 @@ Research papers, 18 criteria, 17 students: yes. Three-question completion essays
 \end{column}
 \end{columns}
 \end{frame}
+
+\fi
 
 %% ====== SLIDE: SHOULD AI BE GRADING AT ALL? ======
 \begin{frame}{``Should AI be grading at all?''}
