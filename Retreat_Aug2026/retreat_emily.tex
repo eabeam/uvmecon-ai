@@ -474,8 +474,8 @@ It made everything pretty \emph{and} also a little bit broken
 \begin{tcolorbox}[dontbox, title={\faTimes\quad Didn't}]
 \small
 \begin{itemize}\setlength{\itemsep}{3pt}
-  \item Two hours arguing with Claude about the appearance of call-out boxes. (Students can't learn from ugly slides, apparently.)
-  \item A JavaScript demo I was too excited about, and then lost my mouse in, mid-lecture
+  \item Too long arguing with Claude about the appearance of call-out boxes. 
+  \item A JavaScript version of slides I got super excited about, and then lost my mouse in, mid-lecture
 \end{itemize}
 \end{tcolorbox}
 \vskip4pt
@@ -616,7 +616,7 @@ Same essay, in \textbf{Copilot with your NetID} & \textcolor{GoGreen}{\faCheck} 
 \rowcolor{white}
 Upload the class gradebook to summarize performance & \textcolor{SoftCoral}{\faTimes} & Grades are PII (unless Path 1) \\[3pt]
 \rowcolor{PaleSage}
-Course chatbot \textbf{trained on} student submissions & \textcolor{SoftCoral}{\faTimes} & Needs approval + agreement \\[3pt]
+%Course chatbot \textbf{trained on} student submissions & \textcolor{SoftCoral}{\faTimes} & Needs approval + agreement \\[3pt]
 \rowcolor{white}
 AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoGreen}{\faCheck} & No education records involved \\[2pt]
 \end{tabular}
@@ -743,7 +743,7 @@ Synthesis, or summary?
 \begin{itemize}\setlength{\itemsep}{3pt}
   \item I can't put a real student's paper on this screen --- so I wrote one. Fictional author, fictional numbers, real citations, a topic unlike anything my S26 class turned in.
   \item \textbf{14 flaws planted on purpose}, each mapped to a rubric line: a lit review that summarizes instead of synthesizes, a working paper counted as peer-reviewed, ``this will \emph{prove}\,'' where it should hedge, a table with no group split, no clustering mentioned.
-  \item \textbf{Answer key written first}, before any grader saw it. Target: \textbf{28.5/38} --- deliberately mid, because that's where graders actually differ. (Real class: median 31.25.)
+  \item \textbf{Answer key written first}, before any grader saw it. Target: \textbf{28.5/38} (Real class: median 31.25.)
 \end{itemize}
 \end{tcolorbox}
 
@@ -752,7 +752,7 @@ Synthesis, or summary?
 \end{frame}
 
 %% ====== SLIDE: FOUR PASSES, ONE COMMAND ======
-\begin{frame}{How it actually runs --- four passes, one command}
+\begin{frame}{How I run things --- four passes, one command}
 \vskip-4pt
 \begin{columns}[T]
 \begin{column}{0.40\textwidth}
@@ -777,10 +777,10 @@ Synthesis, or summary?
 \end{tcolorbox}
 \end{column}
 \end{columns}
-\vskip2pt
-\begin{tcolorbox}[coralbox, top=1pt, bottom=1pt]
-\centering\scriptsize For 21 submissions, I'm honestly not sure it was \emph{faster}. It was more \textbf{consistent} --- and that's the part I couldn't do by hand at 11pm.
-\end{tcolorbox}
+%\vskip2pt
+%\begin{tcolorbox}[coralbox, top=1pt, bottom=1pt]
+%\centering\scriptsize For 21 submissions, I'm honestly not sure it was \emph{faster}. It was more \textbf{consistent} --- and that's the part I couldn't do by hand at 11pm.
+%\end{tcolorbox}
 \end{frame}
 
 %% ====== SLIDE: FOUR GRADERS, ONE PROPOSAL ======
@@ -822,10 +822,10 @@ $^{*}$Copilot is a floor: only its score breakdown was captured.\par}
   \item \textbf{Nobody invented anything.} Zero hallucinated defects, all five.
 \end{itemize}
 \end{tcolorbox}
-\vskip4pt
-\begin{tcolorbox}[accentbox, top=1pt, bottom=1pt]
-\scriptsize \textbf{Read the notes, not the numbers.} And one planted flaw \textbf{nobody caught} --- all five said the opposite.
-\end{tcolorbox}
+%\vskip4pt
+%\begin{tcolorbox}[accentbox, top=1pt, bottom=1pt]
+%\scriptsize \textbf{Read the notes, not the numbers.} And one planted flaw \textbf{nobody caught} --- all five said the opposite.
+%\end{tcolorbox}
 \end{column}
 \end{columns}
 \end{frame}
@@ -864,9 +864,9 @@ Fable\ 27.5 (--4.5)
 \end{itemize}
 \end{tcolorbox}
 \vskip3pt
-\begin{tcolorbox}[quotebox, top=1pt, bottom=1pt]
-\scriptsize One paper, three graders --- a data point, not a finding. But it's the one that made me stop trusting the totals.
-\end{tcolorbox}
+%\begin{tcolorbox}[quotebox, top=1pt, bottom=1pt]
+%\scriptsize One paper, three graders --- a data point, not a finding. But it's the one that made me stop trusting the totals.
+%\end{tcolorbox}
 \end{column}
 \end{columns}
 \end{frame}
@@ -949,23 +949,24 @@ Bad controls and mediators $\cdot$ categorical variables entered as linear $\cdo
 \end{column}
 \end{columns}
 \vskip2pt
-\begin{tcolorbox}[quotebox, halign=center, top=1pt, bottom=1pt]
-\scriptsize It under-scores hardest exactly where the stakes are highest --- and I never once moved a score \emph{down}.
-\end{tcolorbox}
+%\begin{tcolorbox}[quotebox, halign=center, top=1pt, bottom=1pt]
+%\scriptsize It under-scores hardest exactly where the stakes are highest --- and I never once moved a score \emph{down}.
+%\end{tcolorbox}
 \end{frame}
 
 %% ====== SLIDE: SUMMARY ======
-\begin{frame}{What I'd actually tell you to do}
+\begin{frame}{Recommendations}
 \vskip-2pt
 \begin{columns}[T]
 \begin{column}{0.32\textwidth}
 \begin{tcolorbox}[dobox, title={\faCheck\quad Do}, top=2pt, bottom=2pt]
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{3pt}
+\item \textbf{Make a good rubric} Transparent to students, clear for you
   \item \textbf{Split the rubric.} Countable $\rightarrow$ gate. Checkable $\rightarrow$ agent. Judgment $\rightarrow$ you.
   \item \textbf{Give it your context.} The assignment, and your own past feedback.
-  \item \textbf{One job per pass}, and let them disagree --- the disagreements are the product.
-  \item \textbf{De-identify first.} Mine never sees a name, which is what lets me use whatever model grades best.
+  \item \textbf{Test run}: Set up everything and have it test grade a few. Identify problems and tweak
+  \item \textbf{De-identify first.} Mine never sees a name, so I can use whatever model grades best.
 \end{itemize}
 \end{tcolorbox}
 \end{column}
@@ -973,8 +974,9 @@ Bad controls and mediators $\cdot$ categorical variables entered as linear $\cdo
 \begin{tcolorbox}[dontbox, title={\faExclamationTriangle\quad Expect}, top=2pt, bottom=2pt]
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{3pt}
-  \item \textbf{It drifts} --- always on the judgment lines. Up on a paper built to be middling; \emph{down} on a real one. Check which way yours goes.
-  \item \textbf{One pass is never enough.} Budget the second one.
+  \item \textbf{It can drifts} --- always on the judgment lines. 
+  \item \textbf{It compares.} Sending one agent on several papers would downgrade papers that were relatively worse. (Needs a fix)
+  \item \textbf{Plan for your own pass.} This will take time!
   \item \textbf{Models differ, and it moves.} What was true in April wasn't true yesterday.
   \item \textbf{The checks hold.} 133 citations verified, none fabricated; the audits caught a crashed log, a 14-line do-file, a blank template.
 \end{itemize}
@@ -985,16 +987,16 @@ Bad controls and mediators $\cdot$ categorical variables entered as linear $\cdo
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{3pt}
   \item \textbf{Worth it} when there are many submissions, many criteria, and real mechanical checking to do.
-  \item \textbf{Not worth the plumbing} for three-question essays --- Copilot and a good rubric are enough. The rubric is the same file either way.
-  \item \textbf{At 21 submissions it wasn't clearly faster.} It was more consistent.
+%  \item \textbf{Not worth the plumbing} for three-question essays --- Copilot and a good rubric are enough. The rubric is the same file either way.
+  \item \textbf{At 21 submissions, it wasn't clearly faster.} It was more consistent and broadened constructive suggestiosn. 
 \end{itemize}
 \end{tcolorbox}
 \end{column}
 \end{columns}
 \vskip3pt
-\begin{tcolorbox}[accentbox, halign=center, top=1pt, bottom=1pt]
-\small Every correction I've had to make landed on a \emph{judgment} criterion. None landed on a gate or a check.
-\end{tcolorbox}
+%\begin{tcolorbox}[accentbox, halign=center, top=1pt, bottom=1pt]
+%\small Every correction I've had to make landed on a \emph{judgment} criterion. None landed on a gate or a check.
+%\end{tcolorbox}
 \end{frame}
 
 %% ====== SLIDE: THE PIPELINE ====== (CUT 2026-08-26 by Emily; \iffalse ... \fi to restore)
@@ -1075,13 +1077,13 @@ Research papers, 18 criteria, 17 students: yes. Three-question completion essays
 \end{column}
 \begin{column}{0.32\textwidth}
 \begin{tcolorbox}[keybox, title={3. Consistency is a process}, top=2pt, bottom=2pt]
-\footnotesize My own first pass under-scored 11 of 17 papers; the second pass caught it. The comparison isn't AI vs.\ a perfect grader --- it's AI-plus-review vs.\ me, essay 43 of 60, at 10pm.
+\footnotesize  The comparison isn't AI vs.\ a perfect grader --- it's AI-plus-review vs.\ me, essay 43 of 60, at 10pm.
 \end{tcolorbox}
 \end{column}
 \end{columns}
 \vskip5pt
 \begin{tcolorbox}[accentbox, top=3pt, bottom=3pt]
-\small What I don't have a settled answer on: \textbf{disclosure.} Do we tell students? What do we tell them? I'd genuinely like to know where this room lands.
+\small What I don't have a settled answer on: \textbf{disclosure.} Do we tell students? What do we tell them? 
 \end{tcolorbox}
 \end{frame}
 
