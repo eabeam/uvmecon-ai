@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.30)  26 AUG 2026 19:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.30)  26 AUG 2026 20:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1478,17 +1478,34 @@ Overfull \vbox (32.5749pt too high) detected at line 831
 
 [21
 
-{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [22
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <7> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 872.
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 8
+72.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [22
+
+] [23
 
 ]
-Overfull \vbox (19.23158pt too high) detected at line 906
+Overfull \vbox (14.78871pt too high) detected at line 955
  []
 
-[23
+[24
 
-] [24
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
+Overfull \vbox (27.23158pt too high) detected at line 998
+ []
 
-] [25
+[25
+
+] [26
+
+] [27
 
 ]
 \tf@nav=\write6
@@ -1509,29 +1526,32 @@ Package rerunfilecheck Info: File `retreat_emily.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36244 strings out of 474116
- 764990 string characters out of 5743682
+ 36310 strings out of 474116
+ 766000 string characters out of 5743682
  1959187 words of memory out of 5000000
- 57849 multiletter control sequences out of 15000+600000
- 644772 words of font info for 95 fonts, out of 8000000 for 9000
+ 57905 multiletter control sequences out of 15000+600000
+ 648206 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,13n,123p,388b,898s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/fontawesome5/FontAweso
-me5Free-Solid.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lms
-s10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss12.pfb></
-usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/t
-exlive/2024/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2024
-/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2024/texmf-d
-ist/fonts/type1/public/lm/lmsso8.pfb></usr/local/texlive/2024/texmf-dist/fonts/
-type1/public/lm/lmsso9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/publ
-ic/lm/lmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7
-.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/
-local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texli
-ve/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on retreat_emily.pdf (25 pages, 4000508 bytes).
+me5Free-Solid.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmm
+i7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss10.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/t
+exlive/2024/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2024
+/texmf-dist/fonts/type1/public/lm/lmss9.pfb></usr/local/texlive/2024/texmf-dist
+/fonts/type1/public/lm/lmssbo10.pfb></usr/local/texlive/2024/texmf-dist/fonts/t
+ype1/public/lm/lmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/pub
+lic/lm/lmsso8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lms
+so9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></u
+sr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/te
+xlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/
+texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2024/texmf-dist/
+fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1
+/public/amsfonts/symbols/msam10.pfb>
+Output written on retreat_emily.pdf (27 pages, 4064637 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
+ 321 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
+ 55 named destinations out of 1000 (max. 500000)
  212 words of extra memory for PDF output out of 10000 (max. 10000000)
 

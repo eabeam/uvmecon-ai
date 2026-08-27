@@ -830,6 +830,47 @@ $^{*}$Copilot is a floor: only its score breakdown was captured.\par}
 \end{columns}
 \end{frame}
 
+%% ====== SLIDE: AND THEN A REAL PAPER ======
+\begin{frame}{So I ran it again --- on a real one}
+\vskip-6pt
+{\footnotesize One real S26 proposal, de-identified, mid-distribution. Same rubric, three blind graders. \textbf{No answer key --- just the grade I gave it.}\par}
+\vskip1pt
+\begin{columns}[T]
+\begin{column}{0.53\textwidth}
+\begin{tcolorbox}[pipelinebox, title={\faArrowUp\quad The fake paper: everyone scored \emph{above} the key}, top=1pt, bottom=1pt, fonttitle=\bfseries\scriptsize]
+\scriptsize
+\ttfamily Opus +3.0\ \ Codex +3.5\ \ Fable +4.0\\
+Copilot +5.5\ \ Sonnet +6.0
+\end{tcolorbox}
+\vskip4pt
+\begin{tcolorbox}[accentbox, title={\faArrowDown\quad The real paper: all three scored \emph{below} me}, fonttitle=\bfseries\scriptsize, coltitle=DeepCharcoal, colbacktitle=LightGold!80, top=1pt, bottom=1pt]
+\scriptsize
+\ttfamily I sent 32\\
+Sonnet 29.5 (--2.5)\ \ Opus 27.5 (--4.5)\\
+Fable\ 27.5 (--4.5)
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[quotebox, top=1pt, bottom=1pt]
+\scriptsize The drift isn't a property of the \emph{model}. It's a property of the \emph{situation} --- a paper built to be middling invites padding. A real one doesn't.
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{tcolorbox}[keybox, title={\faExclamationTriangle\quad And the part that worried me}, top=2pt, bottom=2pt]
+\scriptsize
+\begin{itemize}\setlength{\itemsep}{3pt}
+  \item \textbf{Opus and Fable both landed on 27.5} --- while disagreeing on \textbf{five of twelve criteria}. One gave the research question full marks and cut the literature; the other did the reverse.
+  \item \textbf{Same total is not agreement.}
+  \item \textbf{Two of the three flagged the student} for a check-in. I hadn't.
+\end{itemize}
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[quotebox, top=1pt, bottom=1pt]
+\scriptsize One paper, three graders --- a data point, not a finding. But it's the one that made me stop trusting the totals.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\end{frame}
+
 %% ====== SLIDE: WHAT THE FEEDBACK READ LIKE ======
 \begin{frame}{What the feedback read like}
 \vskip-6pt
@@ -862,6 +903,57 @@ $^{*}$Copilot is a floor: only its score breakdown was captured.\par}
 
 \end{frame}
 
+%% ====== SLIDE: WHAT I CHANGED BEFORE SENDING ======
+\begin{frame}{What I changed before any of it reached a student}
+\vskip-6pt
+{\footnotesize Every S26 proposal: the agent's draft against the document I actually sent.\par}
+\vskip1pt
+\begin{columns}[T]
+\begin{column}{0.44\textwidth}
+\begin{tcolorbox}[keybox, title={\faBalanceScale\quad Its score, then mine}, top=2pt, bottom=3pt]
+\scriptsize
+\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{c c c}
+\rowcolor{SlateTeal}
+\textcolor{white}{\textbf{draft}} & \textcolor{white}{\textbf{sent}} & \textcolor{white}{\textbf{change}} \\
+\rowcolor{LightGold} 22.5 & 31.5 & \textbf{+9.0} \\
+\rowcolor{LightGold} 24.0 & 30.5 & \textbf{+6.5} \\
+\rowcolor{LightGold} 26.5 & 32.0 & \textbf{+5.5} \\
+\rowcolor{white}     29.5 & 33.5 & +4.0 \\
+\rowcolor{PaleSage}  30.0 & 32.0 & +2.0 \\
+\rowcolor{white}     31.0 & 31.5 & +0.5 \\
+\rowcolor{PaleSage}  34.5 & 34.5 & --- \\
+\rowcolor{white}     36.0 & 36.0 & --- \\
+\end{tabular}
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[accentbox, top=1pt, bottom=1pt]
+\scriptsize \textbf{10 of 14 raised. 0 lowered. Mean $+2.4$.} All of it at the bottom --- strong papers went out exactly as scored.
+\end{tcolorbox}
+\end{column}
+\begin{column}{0.54\textwidth}
+\begin{tcolorbox}[dontbox, title={\faCut\quad What I cut}, top=1pt, bottom=1pt, fonttitle=\bfseries\scriptsize]
+\scriptsize
+The grading apparatus (every time) $\cdot$ comparisons to other students (all 13) $\cdot$ references to their earlier assignments (48 $\rightarrow$ 5) $\cdot$ the closing pep talk (13 of 17) $\cdot$ ``this costs you 4 points''
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[dobox, title={\faPlus\quad What I added}, top=1pt, bottom=1pt, fonttitle=\bfseries\scriptsize]
+\scriptsize
+Bad controls and mediators $\cdot$ categorical variables entered as linear $\cdot$ panel vs.\ repeated cross-section $\cdot$ what the estimation sample actually \emph{is} $\cdot$ ``we talked about this on Thursday''
+\end{tcolorbox}
+\vskip3pt
+\begin{tcolorbox}[pipelinebox, title={\faComment\quad And the register}, top=1pt, bottom=1pt, fonttitle=\bfseries\scriptsize]
+\scriptsize
+3 exclamation marks across all its drafts; 29 across mine. Twice the first person. Twice the questions. Same sentence length --- I don't write shorter sentences, I write fewer of them.
+\end{tcolorbox}
+\end{column}
+\end{columns}
+\vskip2pt
+\begin{tcolorbox}[quotebox, halign=center, top=1pt, bottom=1pt]
+\scriptsize It under-scores hardest exactly where the stakes are highest --- and I never once moved a score \emph{down}.
+\end{tcolorbox}
+\end{frame}
+
 %% ====== SLIDE: SUMMARY ======
 \begin{frame}{What I'd actually tell you to do}
 \vskip-2pt
@@ -881,7 +973,7 @@ $^{*}$Copilot is a floor: only its score breakdown was captured.\par}
 \begin{tcolorbox}[dontbox, title={\faExclamationTriangle\quad Expect}, top=2pt, bottom=2pt]
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{3pt}
-  \item \textbf{It drifts up} --- and always on the judgment lines. You just watched five graders do it.
+  \item \textbf{It drifts} --- always on the judgment lines. Up on a paper built to be middling; \emph{down} on a real one. Check which way yours goes.
   \item \textbf{One pass is never enough.} Budget the second one.
   \item \textbf{Models differ, and it moves.} What was true in April wasn't true yesterday.
   \item \textbf{The checks hold.} 133 citations verified, none fabricated; the audits caught a crashed log, a 14-line do-file, a blank template.
