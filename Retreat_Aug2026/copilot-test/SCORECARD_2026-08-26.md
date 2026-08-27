@@ -56,3 +56,67 @@ Paper: `proposal_medium_PFL.docx` (Andy Dwyer, synthetic, target ≈ 28.5/38). R
 - `sonnet_grade_2026-08-26.md` (full write-up)
 - `codex_grade_2026-08-26.md` (full write-up, run by Emily)
 - `ANSWER_KEY.md` (corrected 2026-08-26: lit-review source count)
+
+---
+
+## Addendum — 2026-08-26, 19:45 (supersedes the counts above)
+
+Two corrections and one addition. **The ordering of graders is unchanged; the levels are not.**
+
+### 1. A fifth grader: Opus 5
+
+Run blind, same two files, same conditions as Fable and Sonnet.
+**Opus: 31.5/38 — closest to the 28.5 key of any grader**, and the only one to deduct on
+Writing quality (3/4). The line above — "Motivation, threats, writing: full marks from all
+four" — no longer holds with Opus in the set.
+
+| | Copilot | Fable | Sonnet | Codex | **Opus** |
+|---|---|---|---|---|---|
+| Total /38 | 34 | 32.5 | 34.5 | 32 | **31.5** |
+| Drift vs. key | +5.5 | +4 | +6 | +3.5 | **+3.0** |
+
+### 2. The key has 14 planted flaws, not 13
+
+Flaw #14 (only 3 peer-reviewed sources in the lit review) was added to the key mid-run
+today. Every "of 13" above predates it.
+
+### 3. The noticed/deducted figures above are row-counts, not per-flaw counts
+
+The original tallies counted rows in a *grouped* table (flaws 2 & 9 share a row; 4 & 14
+share a row; 11, 12 and 9b share a row). Re-scored per-flaw against all 14:
+
+| Grader | Total | Noticed /14 | Deducted /14 | Invented | Extra real issues |
+|---|---|---|---|---|---|
+| Copilot | 34 | 7* | 6* | 0 | 0 |
+| Fable | 32.5 | 13 | 10 | 0 | 5 |
+| Sonnet | 34.5 | 8 | 6 | 0 | 3 |
+| Codex | 32 | 11 | 9 | 0 | 4 |
+| **Opus** | **31.5** | **13** | **12** | 0 | 6 |
+
+\* **Copilot's row is a floor, not a measurement.** Only its Score Breakdown was captured;
+Feedback and Next Steps never were. The other four got credit for flaws named only in
+prose. Do not present Copilot's 7/6 as comparable to Opus's 13/12 without saying this.
+
+### Findings that changed
+
+- **Flaw #7 is a clean 0-for-5, and it is worse than a miss.** Nobody noticed that *X* is
+  never defined in the specification section — and all five affirmatively stated the
+  opposite ("every term is defined"). Four then deducted for the adjacent-but-different
+  "controls not justified." That is not the same catch.
+- **Flaw #1 (broad opening RQ): noticed by Fable and Opus, deducted by nobody.** All five
+  gave Research question 2/2.
+- **All five gave Threats 2/2** — the criterion the key assigns flaw #10 to. "Everyone
+  caught the pre-trends problem" is true only *across* criteria; on the rubric line the key
+  targeted, nobody moved.
+- **Sonnet did deduct for flaws 4 and 14.** The earlier note ("counted correctly but scored
+  3 anyway") overstates it as a non-deduction — it gave Literature 3/4 citing exactly those
+  reasons. The substantive point survives: it took 1 point where the key expected 2.
+- **Four of five spotted the always-treated CA/NJ problem**, not two. Sonnet flagged it in
+  Next Steps without deducting.
+- **Zero hallucinated defects across all five, Opus included.** Three genuine issues the key
+  does not list turned up: Opus on Oregon's benefit start date (Sept 2023, after the March
+  2023 ASEC reference week), Fable on D.C.'s absence from the PFL list, and Opus on
+  inconsistent beta-1 subscript notation between the equation and Sections 5-6.
+
+### Files
+- `opus_grade_2026-08-26.md` (Opus 5, full write-up)
