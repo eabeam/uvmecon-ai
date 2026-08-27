@@ -696,7 +696,7 @@ Is each source actually discussed, not just cited? Tied back to the question? Do
 \scriptsize
 Synthesis, or summary?
 \vskip3pt
-\textbf{Keep it.} And watch it --- this is the line every grader inflated.
+\textbf{Keep it.} And watch it --- this is the line they disagree on most.
 \end{tcolorbox}
 \end{column}
 \end{columns}
@@ -728,7 +728,8 @@ Synthesis, or summary?
 \end{columns}
 \end{frame}
 
-%% ====== SLIDE: WHAT CAME IN ======
+%% ====== SLIDE: WHAT CAME IN ======   (CUT 2026-08-26 by Emily -- fake example superseded by the real one; \iffalse ... \fi to restore)
+\iffalse
 \begin{frame}{What came in --- except this one is fake}
 \vskip-4pt
 \begin{columns}[T]
@@ -750,6 +751,8 @@ Synthesis, or summary?
 \end{column}
 \end{columns}
 \end{frame}
+
+\fi
 
 %% ====== SLIDE: FOUR PASSES, ONE COMMAND ======
 \begin{frame}{How I run things --- four passes, one command}
@@ -783,7 +786,8 @@ Synthesis, or summary?
 %\end{tcolorbox}
 \end{frame}
 
-%% ====== SLIDE: FOUR GRADERS, ONE PROPOSAL ======
+%% ====== SLIDE: FOUR GRADERS, ONE PROPOSAL ======   (CUT 2026-08-26 by Emily -- fake example superseded by the real one; \iffalse ... \fi to restore)
+\iffalse
 \begin{frame}{Five graders, one proposal}
 \vskip-8pt
 {\footnotesize A fake ECON 3500 proposal with 14 planted flaws. My real Spring 2026 grading prompt. Target: 28.5/38.\par}
@@ -830,43 +834,51 @@ $^{*}$Copilot is a floor: only its score breakdown was captured.\par}
 \end{columns}
 \end{frame}
 
-%% ====== SLIDE: AND THEN A REAL PAPER ======
-\begin{frame}{So I ran it again --- on a real one}
+\fi
+
+%% ====== SLIDE: FOUR GRADERS, ONE REAL PROPOSAL ======
+\begin{frame}{Four graders, one real proposal}
 \vskip-6pt
-{\footnotesize One real S26 proposal, de-identified, mid-distribution. Same rubric, three blind graders. \textbf{No answer key --- just the grade I gave it.}\par}
+{\footnotesize A real S26 submission, de-identified, mid-distribution. My actual rubric and prompt, all four blind.\par}
 \vskip1pt
 \begin{columns}[T]
-\begin{column}{0.53\textwidth}
-\begin{tcolorbox}[pipelinebox, title={\faArrowUp\quad The fake paper: everyone scored \emph{above} the key}, top=1pt, bottom=1pt, fonttitle=\bfseries\scriptsize]
-\scriptsize
-\ttfamily Opus +3.0\ \ Codex +3.5\ \ Fable +4.0\\
-Copilot +5.5\ \ Sonnet +6.0
-\end{tcolorbox}
-\vskip4pt
-\begin{tcolorbox}[accentbox, title={\faArrowDown\quad The real paper: all three scored \emph{below} me}, fonttitle=\bfseries\scriptsize, coltitle=DeepCharcoal, colbacktitle=LightGold!80, top=1pt, bottom=1pt]
-\scriptsize
-\ttfamily I sent 32\\
-Sonnet 29.5 (--2.5)\ \ Opus 27.5 (--4.5)\\
-Fable\ 27.5 (--4.5)
-\end{tcolorbox}
-\vskip3pt
-\begin{tcolorbox}[quotebox, top=1pt, bottom=1pt]
-\scriptsize The drift isn't a property of the \emph{model}. It's a property of the \emph{situation} --- a paper built to be middling invites padding. A real one doesn't.
-\end{tcolorbox}
+\begin{column}{0.56\textwidth}
+{\scriptsize
+\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{0.98}
+\begin{tabular}{>{\raggedright\arraybackslash}m{3.0cm} c c c c c}
+\rowcolor{SlateTeal}
+\textcolor{white}{\textbf{Criterion (pts)}} & \textcolor{white}{\textbf{Me}} & \textcolor{white}{\textbf{Copilot}} & \textcolor{white}{\textbf{Sonnet}} & \textcolor{white}{\textbf{Opus}} & \textcolor{white}{\textbf{Fable}} \\
+\rowcolor{white}     Research question (2) & 2 & 2 & 2 & 1.5 & 2 \\
+\rowcolor{PaleSage}  Motivation (4) & 4 & 4 & 3 & 3 & 3 \\
+\rowcolor{white}     Literature (4) & 3 & 3 & 2 & 3 & 2 \\
+\rowcolor{PaleSage}  Data identification (2) & 2 & 2 & 2 & 1.5 & 2 \\
+\rowcolor{white}     Summary stats table (4) & 3 & 2 & 3 & 2 & 2 \\
+\rowcolor{PaleSage}  Specification (4) & 3 & 3 & 3 & 3 & 3 \\
+\rowcolor{LightGold} Critical thinking (4) & \textbf{4} & \textbf{4} & 3 & \textbf{2} & \textbf{2} \\
+\rowcolor{white}     Qualified assertions (2) & 1 & 2 & 1.5 & 1.5 & 2 \\
+\rowcolor{PaleSage}  Threats (2) & 1 & 2 & 1.5 & 1.5 & 1.5 \\
+\rowcolor{white}     Bibliography (2) & 1.5 & 2 & 1.5 & 1.5 & 1 \\
+\rowcolor{PaleSage}  Formatting (4) & 4 & 4 & 4 & 4 & 4 \\
+\rowcolor{white}     Writing quality (4) & 3.5 & 4 & 3 & 3 & 3 \\
+\rowcolor{LightGold} \textbf{Total (38)} & \textbf{32} & \textbf{34} & \textbf{29.5} & \textbf{27.5} & \textbf{27.5} \\
+\rowcolor{white}     Flagged for a check-in? & no & no & no & \textbf{yes} & \textbf{yes} \\
+\end{tabular}
+}
 \end{column}
-\begin{column}{0.45\textwidth}
-\begin{tcolorbox}[keybox, title={\faExclamationTriangle\quad And the part that worried me}, top=2pt, bottom=2pt]
+\begin{column}{0.42\textwidth}
+\begin{tcolorbox}[keybox, title={\faSearch\quad What that table says}, top=2pt, bottom=2pt]
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{3pt}
-  \item \textbf{Opus and Fable both landed on 27.5} --- while disagreeing on \textbf{five of twelve criteria}. One gave the research question full marks and cut the literature; the other did the reverse.
-  \item \textbf{Same total is not agreement.}
-  \item \textbf{Two of the three flagged the student} for a check-in. I hadn't.
+  \item \textbf{6.5 points of spread} on one paper, one rubric --- and it \emph{straddles} me. This isn't ``AI grades low.''
+  \item \textbf{Critical thinking ran 2 to 4.} The judgment criterion, exactly where you'd expect it.
+  \item \textbf{Opus and Fable both landed on 27.5} while disagreeing on five of twelve. Same total is not agreement.
+  \item \textbf{Two of the four flagged this student} for a check-in. I hadn't.
 \end{itemize}
 \end{tcolorbox}
 \vskip3pt
-%\begin{tcolorbox}[quotebox, top=1pt, bottom=1pt]
-%\scriptsize One paper, three graders --- a data point, not a finding. But it's the one that made me stop trusting the totals.
-%\end{tcolorbox}
+\begin{tcolorbox}[quotebox, top=1pt, bottom=1pt]
+\scriptsize \textbf{How I know these mean anything:} I ran this identical setup first on a paper \emph{I wrote} --- 14 planted flaws, answer key written before anyone graded. There, every grader came in \emph{above} my key. Here, three of four came in \emph{below} me.
+\end{tcolorbox}
 \end{column}
 \end{columns}
 \end{frame}
@@ -974,7 +986,7 @@ Bad controls and mediators $\cdot$ categorical variables entered as linear $\cdo
 \begin{tcolorbox}[dontbox, title={\faExclamationTriangle\quad Expect}, top=2pt, bottom=2pt]
 \scriptsize
 \begin{itemize}\setlength{\itemsep}{3pt}
-  \item \textbf{It can drifts} --- always on the judgment lines. 
+  \item \textbf{It can drift} --- always on the judgment lines. 
   \item \textbf{It compares.} Sending one agent on several papers would downgrade papers that were relatively worse. (Needs a fix)
   \item \textbf{Plan for your own pass.} This will take time!
   \item \textbf{Models differ, and it moves.} What was true in April wasn't true yesterday.
@@ -988,7 +1000,7 @@ Bad controls and mediators $\cdot$ categorical variables entered as linear $\cdo
 \begin{itemize}\setlength{\itemsep}{3pt}
   \item \textbf{Worth it} when there are many submissions, many criteria, and real mechanical checking to do.
 %  \item \textbf{Not worth the plumbing} for three-question essays --- Copilot and a good rubric are enough. The rubric is the same file either way.
-  \item \textbf{At 21 submissions, it wasn't clearly faster.} It was more consistent and broadened constructive suggestiosn. 
+  \item \textbf{At 21 submissions, it wasn't clearly faster.} It was more consistent and broadened constructive suggestions. 
 \end{itemize}
 \end{tcolorbox}
 \end{column}
