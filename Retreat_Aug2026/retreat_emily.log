@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.30)  26 AUG 2026 21:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.30)  26 AUG 2026 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1455,12 +1455,8 @@ Package pdftex.def Info: figures/rp04_prompts.png  used on input line 787.
 
  <./figures/rp04_prompts.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 886.
-
-Overfull \vbox (12.35835pt too high) detected at line 886
- []
-
-[20
+(Font)              <7> on input line 884.
+ [20
 
 ] [21
 
@@ -1468,7 +1464,7 @@ Overfull \vbox (12.35835pt too high) detected at line 886
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/te
 xlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
-Overfull \vbox (8.94106pt too high) detected at line 1014
+Overfull \vbox (8.94106pt too high) detected at line 1012
  []
 
 [23
@@ -1498,7 +1494,7 @@ Package rerunfilecheck Info: File `retreat_emily.out' has not changed.
 Here is how much of TeX's memory you used:
  36236 strings out of 474116
  764691 string characters out of 5743682
- 1967187 words of memory out of 5000000
+ 1964187 words of memory out of 5000000
  57840 multiletter control sequences out of 15000+600000
  645083 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1515,7 +1511,7 @@ c/lm/lmsso9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7
 .pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/
 local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texli
 ve/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on retreat_emily.pdf (25 pages, 3524045 bytes).
+Output written on retreat_emily.pdf (25 pages, 3523863 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  193 compressed objects within 2 object streams
