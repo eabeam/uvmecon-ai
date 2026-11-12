@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.30)  26 AUG 2026 22:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.30)  27 AUG 2026 08:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1412,12 +1412,25 @@ File: figures/emoji_scream.png Graphic file (type png)
 <use figures/emoji_scream.png>
 Package pdftex.def Info: figures/emoji_scream.png  used on input line 455.
 (pdftex.def)             Requested size: 9.3474pt x 9.35005pt.
+File: figures/emoji_scream.png Graphic file (type png)
+<use figures/emoji_scream.png>
+Package pdftex.def Info: figures/emoji_scream.png  used on input line 455.
+(pdftex.def)             Requested size: 9.3474pt x 9.35005pt.
+File: figures/emoji_scream.png Graphic file (type png)
+<use figures/emoji_scream.png>
+Package pdftex.def Info: figures/emoji_scream.png  used on input line 455.
+(pdftex.def)             Requested size: 9.3474pt x 9.35005pt.
  [9
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free3.enc} 
-<./figures/emoji_scream.png>] [10
+<./figures/emoji_scream.png>]
+Overfull \vbox (5.5352pt too high) detected at line 488
+ []
 
-{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}] [11
+[10
+
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+[11
 
 ] [12
 
@@ -1425,7 +1438,7 @@ Package pdftex.def Info: figures/emoji_scream.png  used on input line 455.
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 601.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 602.
  [14
 
 ] [15
@@ -1434,14 +1447,14 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 703.
+(Font)              <8> on input line 704.
  [17
 
 ]
 <figures/rp04_assignment.png, id=156, 830.10126pt x 659.46375pt>
 File: figures/rp04_assignment.png Graphic file (type png)
 <use figures/rp04_assignment.png>
-Package pdftex.def Info: figures/rp04_assignment.png  used on input line 729.
+Package pdftex.def Info: figures/rp04_assignment.png  used on input line 730.
 (pdftex.def)             Requested size: 219.89978pt x 174.69667pt.
  [18
 
@@ -1449,13 +1462,14 @@ Package pdftex.def Info: figures/rp04_assignment.png  used on input line 729.
 <figures/rp04_prompts.png, id=163, 237.88875pt x 128.48pt>
 File: figures/rp04_prompts.png Graphic file (type png)
 <use figures/rp04_prompts.png>
-Package pdftex.def Info: figures/rp04_prompts.png  used on input line 787.
+Package pdftex.def Info: figures/rp04_prompts.png  used on input line 788.
 (pdftex.def)             Requested size: 151.36584pt x 81.75444pt.
- [19
+
+[19
 
  <./figures/rp04_prompts.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 884.
+(Font)              <7> on input line 885.
  [20
 
 ] [21
@@ -1464,7 +1478,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/te
 xlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
-Overfull \vbox (8.94106pt too high) detected at line 1012
+Overfull \vbox (0.94106pt too high) detected at line 1013
  []
 
 [23
@@ -1492,10 +1506,10 @@ Package rerunfilecheck Info: File `retreat_emily.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36235 strings out of 474116
- 764675 string characters out of 5743682
+ 36234 strings out of 474116
+ 764659 string characters out of 5743682
  1962187 words of memory out of 5000000
- 57839 multiletter control sequences out of 15000+600000
+ 57838 multiletter control sequences out of 15000+600000
  645083 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,13n,123p,388b,898s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1511,7 +1525,7 @@ c/lm/lmsso9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy7
 .pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/
 local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texli
 ve/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on retreat_emily.pdf (25 pages, 3523270 bytes).
+Output written on retreat_emily.pdf (25 pages, 3522972 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  193 compressed objects within 2 object streams

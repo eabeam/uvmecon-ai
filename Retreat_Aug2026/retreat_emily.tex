@@ -347,7 +347,7 @@ For big, autonomous jobs --- it runs freely in a space that \emph{can't} touch t
 }
 
 %% ====== SLIDE: TWO THINGS IT CAN BUY YOU (1/2) ======
-\begin{frame}{Two things it can buy you --- 1. Less time}
+\begin{frame}{Prepping courses in less time}
 \vskip-2pt
 \begin{columns}[T]
 \begin{column}{0.47\textwidth}
@@ -374,7 +374,7 @@ The obvious one: formatting, converting, ``make this deck match that deck,'' ``t
 \end{frame}
 
 %% ====== SLIDE: TWO THINGS IT CAN BUY YOU (2/2) ======
-\begin{frame}{Two things it can buy you --- 2. More range}
+\begin{frame}{Prepping courses with more range}
 \vskip4pt
 \begin{tcolorbox}[keybox, title={\faLightbulb\quad More range}]
 \small
@@ -424,7 +424,7 @@ The only change students could see: no more PowerPoint.
 %% ====== SLIDE: COMPLEMENT, NOT SUBSTITUTE ======
 \begin{frame}{Complement, not substitute}
 \vskip-6pt
-{\small Econometrics, this past year --- what the workflow actually looked like:}
+{\small Econometrics work flow (a first pass):}
 \vskip1pt
 \begin{tcolorbox}[keybox, title={\faRoute\quad The sequence}, top=1pt, bottom=1pt]
 \footnotesize
@@ -445,8 +445,8 @@ It made everything pretty \emph{and} also a little bit broken
 \end{tcolorbox}
 \end{column}
 \begin{column}{0.48\textwidth}
-\begin{tcolorbox}[dontbox, title={\faTimes\quad When I skipped step 3}, top=2pt, bottom=2pt]
-\footnotesize It tried to sneak in a line that \emph{not} violating the zero-conditional-mean assumption implies causality. \scream
+\begin{tcolorbox}[dontbox, title={\faTimes\quad Step 3 matters!}, top=2pt, bottom=2pt]
+\footnotesize It tried to sneak in a line that \emph{not} violating the zero-conditional-mean assumption implies causality. \scream\scream\scream
 \end{tcolorbox}
 \end{column}
 \end{columns}
@@ -464,6 +464,7 @@ It made everything pretty \emph{and} also a little bit broken
 \begin{enumerate}\setlength{\itemsep}{3pt}
   \item \textbf{Add new content.} Hand it a paper $\rightarrow$ draft slides in my format $\rightarrow$ I edit
   \item \textbf{Audit a deck.} ``Where are the holes? Does this hang together? What would a student get lost on?''
+  \item \textbf{Add examples:} Intersperse knowledge checks
   \item \textbf{Build a demo and embed it.} An interactive supply-and-demand explorer, a CLT visual --- one HTML file, no login. \emph{(Erkmen will show this.)}
 \end{enumerate}
 \vskip3pt
@@ -548,7 +549,7 @@ If you want to set a personal best, you avoid the headwind. If you want to get \
 \end{column}
 \begin{column}{0.48\textwidth}
 \begin{tcolorbox}[dobox, title={\faCheck\quad Path 2: De-identify first}, top=1pt, bottom=1pt]
-\footnotesize \textbf{Strip the identifiers} so it's no longer an education record. Then use whatever tool you like --- including the good one you pay for yourself.
+\footnotesize \textbf{Strip the identifiers} so it's no longer an education record. Make sure you've turned off allowing data for training (in settings).
 % \vskip2pt
 % This is the path I use, and what the rest of this section shows.
 \end{tcolorbox}
@@ -621,10 +622,10 @@ Upload the class gradebook to summarize performance & \textcolor{SoftCoral}{\faT
 AI to draft a rubric, lecture, or problem set (no student data) & \textcolor{GoGreen}{\faCheck} & No education records involved \\[2pt]
 \end{tabular}
 }
-\vskip5pt
-\begin{tcolorbox}[quotebox, width=12.5cm, top=3pt, bottom=3pt]
-\small The dividing line is almost always: \textbf{identifiable student data + a tool the university doesn't control.} Small seminars make ``de-identified'' harder than it sounds --- topic and writing style re-identify.
-\end{tcolorbox}
+%\vskip5pt
+%\begin{tcolorbox}[quotebox, width=12.5cm, top=3pt, bottom=3pt]
+%\small The dividing line is almost always: \textbf{identifiable student data + a tool the university doesn't control.} Small seminars make ``de-identified'' harder than it sounds --- topic and writing style re-identify.
+%\end{tcolorbox}
 \end{frame}
 
 %% ====== SLIDE: A RUBRIC AN AGENT CAN GRADE (1/2) ======
@@ -956,7 +957,7 @@ Bad controls and mediators $\cdot$ categorical variables entered as linear $\cdo
 \vskip3pt
 \begin{tcolorbox}[pipelinebox, title={\faComment\quad And the register}, top=1pt, bottom=1pt, fonttitle=\bfseries\scriptsize]
 \scriptsize
-3 exclamation marks across all its drafts; 29 across mine. Twice the first person. Twice the questions. Same sentence length --- I don't write shorter sentences, I write fewer of them.
+3 exclamation marks across all its drafts; 29 across mine. Twice the first person. Twice the questions. I basically deleted half and rewrote a bunch.
 \end{tcolorbox}
 \end{column}
 \end{columns}
@@ -989,8 +990,8 @@ Bad controls and mediators $\cdot$ categorical variables entered as linear $\cdo
   \item \textbf{It can drift} --- always on the judgment lines. 
   \item \textbf{It compares.} Sending one agent on several papers would downgrade papers that were relatively worse. (Needs a fix)
   \item \textbf{Plan for your own pass.} This will take time!
-  \item \textbf{Models differ, and it moves.} What was true in April wasn't true yesterday.
-  \item \textbf{The checks hold.} 133 citations verified, none fabricated; the audits caught a crashed log, a 14-line do-file, a blank template.
+  \item \textbf{Models differ}, and they improve over time. 
+  \item \textbf{It's very good at checks!} 133 citations verified, none fabricated; the audits caught a crashed log, a 14-line do-file, a blank template.
 \end{itemize}
 \end{tcolorbox}
 \end{column}
@@ -1074,21 +1075,21 @@ Research papers, 18 criteria, 17 students: yes. Three-question completion essays
 %% ====== SLIDE: SHOULD AI BE GRADING AT ALL? ======
 \begin{frame}{``Should AI be grading at all?''}
 \vskip-2pt
-{\small A fair question, and one a faculty attendee put to us bluntly at the June webinar. My honest answer, in three parts:}
+I don't know.
 \vskip3pt
 \begin{columns}[T]
 \begin{column}{0.32\textwidth}
-\begin{tcolorbox}[keybox, title={1. What I let it grade}, top=2pt, bottom=2pt]
-\footnotesize \textbf{Rubric-gated completion work} --- did they answer all six questions, at length, thoughtfully. Not the term paper. Not anything where the grade \emph{is} the feedback.
+\begin{tcolorbox}[keybox, title={1. Very happy with mechanical roles}, top=2pt, bottom=2pt]
+\footnotesize \textbf{Rubric-gated completion work} --- did they answer all six questions, at length, thoughtfully. Not anything where the grade \emph{is} the feedback. Spot checks important to stay connected
 \end{tcolorbox}
 \end{column}
 \begin{column}{0.32\textwidth}
-\begin{tcolorbox}[keybox, title={2. It's an RA, not a referee}, top=2pt, bottom=2pt]
-\footnotesize Same contract as a TA: it does a first pass, I check what it flags and spot-check what it didn't, and \textbf{the errors are mine either way}. Nothing about that changed.
+\begin{tcolorbox}[keybox, title={2. Can be helpful as a robot TA}, top=2pt, bottom=2pt]
+\footnotesize Same contract as a TA: it does a first pass, I check what it flags and spot-check what it didn't, and \textbf{the errors are mine either way}.
 \end{tcolorbox}
 \end{column}
 \begin{column}{0.32\textwidth}
-\begin{tcolorbox}[keybox, title={3. Consistency is a process}, top=2pt, bottom=2pt]
+\begin{tcolorbox}[keybox, title={3. When I need more consistency}, top=2pt, bottom=2pt]
 \footnotesize  The comparison isn't AI vs.\ a perfect grader --- it's AI-plus-review vs.\ me, essay 43 of 60, at 10pm.
 \end{tcolorbox}
 \end{column}
@@ -1098,7 +1099,7 @@ Research papers, 18 criteria, 17 students: yes. Three-question completion essays
 %\small What I don't have a settled answer on: \textbf{disclosure.} Do we tell students? What do we tell them? 
 %\end{tcolorbox}
 \begin{tcolorbox}[accentbox, top=3pt, bottom=3pt]
-\small Personal aim is to grade better/faster \emph{without} losing assessment as an element of \textbf{care} and of \textbf{connection} 
+\small My personal aim is to grade better/faster \emph{without} losing assessment as an element of \textbf{care} and of \textbf{connection} 
 \end{tcolorbox}
 \end{frame}
 
